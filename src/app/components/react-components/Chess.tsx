@@ -44,7 +44,7 @@ const Chess = () => {
         var boardCopy = board
     
         if (game[i] == 'O-O') {
-
+            
             if (i%3 == 1) { // white short castle
                 boardCopy = replaceAt(boardCopy, 63, ' ')
                 boardCopy = replaceAt(boardCopy, 61, 'R')

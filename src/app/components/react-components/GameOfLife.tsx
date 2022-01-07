@@ -1,21 +1,12 @@
 import React, {useState, useEffect} from 'react'
 
-const animSpd = .4;
-const dRad = 50;
-const dbcolor = "rgb(30, 30, 30)";
-const freq = 1;
+const dbcolor = "rgb(15, 15, 15)";
 const bigDot = 10;
 const smallDot = 5;
-const cellSize = 20;
-
+const cellSize = 24;
 
 const rand = (n: number) => {
     return Math.floor(Math.random() * n);
-}
-const isValid = (r: number, c: number, 
-        rdim: number, cdim: number) => {
-    return (0 <= r && r < rdim
-            && 0 <= c && c < cdim);
 }
 const getShape = (str: string) => {
     switch (str) {
@@ -25,24 +16,6 @@ const getShape = (str: string) => {
         case 'toad': return [[0, 1], [0, 2], [0, 3], [1, 0], [1, 1], [1, 2]];
         default: return [];
     }
-}
-const addShape = (dotArr: boolean[][]) => {
-    var rows = dotArr.length;
-    var cols = dotArr[0].length;
-
-    var shape = ['glider', 'blinker', 'toad'][rand(3)];
-    const indexArr = getShape(shape);
-    var rowDisp = rand(rows);
-    var colDisp = rand(cols);
-
-    for (var i = 0; i < indexArr.length; i++) {
-        var r = indexArr[i][0] + rowDisp;
-        var c = indexArr[i][1] + colDisp;
-        if (isValid(r, c, rows, cols)) {
-            dotArr[r][c] = true;
-        }
-    }
-    return dotArr;
 }
 
 const resizeDots = (currRows: number, currCols: number, 
@@ -61,6 +34,7 @@ const resizeDots = (currRows: number, currCols: number,
 
 
 const GameOfLife = () => {
+    
 
     const getRows = () => {
         return Math.floor(window.innerHeight/cellSize);
@@ -68,39 +42,95 @@ const GameOfLife = () => {
     const getCols = () => {
         return Math.floor(window.innerWidth/cellSize);
     }
+    const addShape = () => {
+        var rows = dots.length;
+        var cols = dots[0].length;
+    
+        var shape = ['glider', 'blinker', 'toad'][rand(3)];
+        const indexArr = getShape(shape);
+        var rowDisp = rand(rows);
+        var colDisp = rand(cols);
+    
+        for (var i = 0; i < indexArr.length; i++) {
+            var r = indexArr[i][0] + rowDisp;
+            var c = indexArr[i][1] + colDisp;
+            if (r < rows && c < cols) {
+                dots[r][c] = true;
+            }
+        }
+    }
     const initMultiShapes = (num: number) => {
         var rows = getRows();
         var cols = getCols();
         var dotArr = Array(rows).fill(null).map(
             () => Array(cols).fill(false));
         for (var n = 0; n < num; n++) {
-            dotArr = [...addShape(dotArr)];
+            var shape = ['glider', 'blinker', 'toad'][rand(3)];
+            const indexArr = getShape(shape);
+            var rowDisp = rand(rows);
+            var colDisp = rand(cols);
+            for (var i = 0; i < indexArr.length; i++) {
+                var r = indexArr[i][0] + rowDisp;
+                var c = indexArr[i][1] + colDisp;
+                if (r < rows && c < cols) {
+                    dotArr[r][c] = true;
+                }
+            }
         }
         return dotArr;
     }
 
-    const [dots, setDots] = useState(initMultiShapes(40));
+    const [dots, setDots] = useState(initMultiShapes(30));
     const [rows, setRows] = useState(getRows());
     const [cols, setCols] = useState(getCols());
     const [t, setT] = useState(0);
-    
-    const getNB = (r: number, c: number) => {
-        if (0 <= r && r < dots.length
-                && 0 <= c && c < dots[0].length) {
-            return dots[r][c];
-        } else {
-            return 0;
-        }
-    }
+
     const updateDots = () => {
-        const newDots = [...dots];
-        for (var i = 0; i < newDots.length; i++) {
-            for (var j = 0; j < newDots[0].length; j++) {
-                var neighbors = 
-                    getNB(i, j+1) + getNB(i, j-1) +
-                    getNB(i-1, j) + getNB(i+1, j) +
-                    getNB(i+1, j+1) + getNB(i+1, j-1) +
-                    getNB(i-1, j+1) + getNB(i-1, j-1)
+        const r = dots.length - 1;
+        const c = dots[0].length - 1;
+        const newDots = Array(r + 1).fill(null).map(
+            () => Array(c + 1).fill(false));
+        for (var j = 1; j < c; j++) {
+            var neighbors = dots[0][j-1] + dots[0][j+1] 
+                + dots[1][j]  + dots[1][j+1] + dots[1][j-1];
+            if (dots[0][j]) {
+                newDots[0][j] = (neighbors == 2 || neighbors == 3);
+            } else {
+                newDots[0][j] = (neighbors == 3);
+            }
+        }
+        for (var j = 1; j < c; j++) {
+            var neighbors = dots[r][j-1] + dots[r][j+1] 
+                + dots[r][j]  + dots[r-1][j+1] + dots[r-1][j-1];
+            if (dots[r][j]) {
+                newDots[r][j] = (neighbors == 2 || neighbors == 3);
+            } else {
+                newDots[r][j] = (neighbors == 3);
+            }
+        }
+        for (var i = 1; i < r; i++) {
+            var neighbors = dots[i-1][0] + dots[i+1][0] 
+                + dots[i][1]  + dots[i+1][1] + dots[i-1][1];
+            if (dots[i][0]) {
+                newDots[i][0] = (neighbors == 2 || neighbors == 3);
+            } else {
+                newDots[i][0] = (neighbors == 3);
+            }
+        }
+        for (var i = 1; i < r; i++) {
+            var neighbors = dots[i-1][c] + dots[i+1][c] 
+                + dots[i][c-1]  + dots[i+1][c-1] + dots[i-1][c-1];
+            if (dots[i][c]) {
+                newDots[i][c] = (neighbors == 2 || neighbors == 3);
+            } else {
+                newDots[i][c] = (neighbors == 3);
+            }
+        }
+        for (var i = 1; i < r; i++) {
+            for (var j = 1; j < c; j++) {
+                var neighbors = dots[i][j-1] + dots[i][j+1] 
+                    + dots[i+1][j] + dots[i-1][j] + dots[i+1][j+1]
+                    + dots[i-1][j-1] + dots[i-1][j+1] + dots[i+1][j-1];
                 if (dots[i][j]) {
                     newDots[i][j] = (neighbors == 2 || neighbors == 3)
                 } else {
@@ -108,7 +138,7 @@ const GameOfLife = () => {
                 }
             }
         }
-        setDots([...newDots]);
+        setDots(newDots);
     }
     
     useEffect(() => {
@@ -120,47 +150,40 @@ const GameOfLife = () => {
                 setCols(currCols);
                 setDots(resizeDots(currRows, currCols, dots));
             } else {
-                setDots(addShape(dots));
+                addShape();
                 updateDots();
             }
             setT(t + 1);
-        }, 1000/freq);
-    }, [t])   
+        }, 1000);
+    }, [t])
 
     return (
         <div style={{position: "fixed"}}>
-            {dots.map((dotRow, rowNum) => 
-                <div 
-                    key={rowNum}
+            {dots.map((dotRow) => 
+                <div
                     style={{
                         display: "flex",
                         justifyContent:"center",
                         height: cellSize
                     }}
                 >
-                    {dotRow.map((dot, colNum) => {
+                    {dotRow.map((dot) => {
                         return (
-                            <div
-                                key={colNum} 
+                            <span
                                 style={{
                                     width: cellSize,
-                                    height: cellSize,
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center"
+                                    height: cellSize
                                 }}
                             >
                                 <div
                                     style={{
-                                        width: smallDot,
-                                        height: smallDot,
-                                        transition: 'transform ' + animSpd + 's',
+                                        width: dot? bigDot : smallDot,
+                                        height: dot? bigDot : smallDot,
                                         background: dbcolor,
-                                        borderRadius: dRad + '%',
-                                        transform: 'Scale(' + (dot? bigDot/smallDot : 1) + ')'
+                                        borderRadius: '50%'
                                     }}
                                 />
-                            </div>
+                            </span>
                         )
                     })}
                 </div>
