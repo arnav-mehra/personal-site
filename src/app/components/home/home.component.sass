@@ -1,0 +1,66 @@
+.panel-feature-1
+    width: 300px
+    min-width: 300px
+.panel-feature-2
+    width: 300px
+    min-width: 300px
+    height: 300px
+    max-height: 300px
+    overflow: hidden
+    border-radius: 10px
+    img
+        width: 100%
+
+
+@media (max-width: 750px)
+    .panel-feature-1
+        margin: 20px 0
+    .panel-feature-2
+        margin: 20px 0
+    .home-panel
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+        margin: 20px 0 30px 0
+
+        .buffer
+            margin: 0
+        .panel-text
+            .panel-title
+                font-size: 24px
+                margin-bottom: 15px
+                color: black
+                padding: 8px
+                border-radius: 3px
+                background: rgb(201, 245, 201)
+            .panel-description
+                font-size: 18px
+                margin-bottom: 10px
+            .panel-link
+                color: rgb(215, 208, 238)
+                text-decoration: none
+
+@media (min-width: 751px)
+    .home-panel
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin: 30px 0 50px 0
+
+        .buffer
+            margin-left: 40px
+        .panel-text
+            .panel-title
+                font-size: 24px
+                margin-bottom: 15px
+                color: black
+                padding: 8px
+                border-radius: 3px
+                background: rgb(201, 245, 201)
+            .panel-description
+                font-size: 18px
+                margin-bottom: 10px
+            .panel-link
+                color: rgb(215, 208, 238)
+                text-decoration: none

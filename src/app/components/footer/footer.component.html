@@ -1,0 +1,22 @@
+<div (window:resize)="updateWidth()">
+    <div *ngIf="width > 750 && isOutside" class=outside-foot>
+        <div class=icon-container>
+            <a *ngFor="let item of footerItems"
+            [matTooltip]="item.title"
+            matTooltipPosition="left"
+            (click)="getAction(item.title)">
+                <fa-icon [icon]="item.icon"></fa-icon>
+            </a>
+        </div>
+    </div>
+    <nav *ngIf="!isOutside" class="menu-items">
+        <div *ngFor="let item of footerItems">
+            <a mat-button (click)="getAction(item.title)">
+                <div class="menu-navbutton">
+                    <fa-icon [icon]="item.icon"></fa-icon>
+                    {{item.title}}
+                </div>
+            </a>
+        </div>
+    </nav>
+</div>

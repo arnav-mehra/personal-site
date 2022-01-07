@@ -1,0 +1,59 @@
+<div (window:resize)="updateWidth()">
+    <div class="home-panel" *ngIf="width > 750">
+        <div class="panel-feature-2">
+            <img src="assets/seniorpic.jpg" alt="IMG">
+        </div>
+        <div class=buffer></div>
+        <div class="panel-text">
+            <div class="panel-title">Who Am I?</div>
+            <div class="panel-description">
+                Hi, my name is Arnav Mehra and I am currently a freshman 
+                at Purdue University studying Computer Science.
+                
+                My interest in CS started just a few years ago when 
+                I identified a problem in my school and decided to
+                solve it via an app I called "HSE Courses".
+                Ever since then, the potential impacts of CS 
+                have fascinated me, driving me to explore as much 
+                about this field as possible.
+            </div>
+        </div>
+    </div>
+    <div class="home-panel" *ngIf="width < 750">
+        <div class="panel-text">
+            <div class="panel-title">Who Am I?</div>
+            <div class="panel-description">
+                Hi, my name is Arnav Mehra and I am currently a freshman 
+                at Purdue University studying Computer Science.
+                
+                My interest in CS started just a few years ago when 
+                I identified a problem in my school and decided to
+                solve it via an app I called "HSE Courses".
+                Ever since then, the potential impacts of CS 
+                have fascinated me, driving me to explore as much 
+                about this field as possible.
+            </div>
+        </div>
+        <div class="panel-feature-2">
+            <img src="assets/seniorpic.jpg" alt="IMG">
+        </div>
+    </div>
+
+    <div class="home-panel">
+        <div class="panel-text">
+            <div class="panel-title">One Problem At A Time</div>
+            <div class="panel-description">
+                Whether its a problem in my community or a puzzle I find 
+                interesting, I will solve it with code.
+                From course management apps to Chess algorithms, my projects have
+                allowed me to learn about a variety CS topics and their applications
+                to different types of problems.
+            </div>
+            <a class="panel-link" href="/projects" routerLinkActive="active">[See Projects]</a>
+        </div>
+        <div class=buffer></div>
+        <div class="panel-feature-1">
+            <chess-embedded></chess-embedded>
+        </div>
+    </div>
+</div>

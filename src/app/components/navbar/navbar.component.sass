@@ -1,0 +1,73 @@
+.sidenav-inactive
+    position: fixed
+    top: 0
+    right: 0
+    background: rgb(20, 20, 20)
+    height: 100vh
+
+    width: 0
+    transition: width .5s ease-in-out
+
+.sidenav-active
+    position: fixed
+    top: 0
+    right: 0
+    background: rgb(20, 20, 20)
+    height: 100vh
+
+    width: 170px
+    transition: width .5s ease-in-out
+
+.sidenav-wrapper
+    padding: 85px 15px 0 15px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+
+.menu-navbar
+    width: 100%
+    position: fixed
+    top: 0
+    left: 0
+    background: rgb(20, 20, 20)
+    backdrop-filter: blur(5px)
+
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    .menu-wrapper
+        max-width: 1300px
+        width: calc(100% - 50px)
+        padding: 20px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        
+        .title
+            font-size: 30px
+            padding: 5px
+            border-radius: 10px
+
+        .menu-items
+            display: flex
+            justify-content: space-between
+            min-width: 350px
+
+.menu-navbutton:hover
+    color: rgb(215, 208, 238)
+.menu-navbutton
+    font-size: 18px
+    fa-icon
+        margin-right: 5px
+
+.openclose
+    font-size: 26px
+    z-index: 1
+    
+
+.fade
+    width: 100%
+    height: 10px
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(30, 30, 30, 0) 100%)

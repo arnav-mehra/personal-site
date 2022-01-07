@@ -1,0 +1,33 @@
+<div>
+    <div class="type" *ngFor="let projectType of projectData">
+        <div>{{projectType.type}}</div>
+        <div class="card" *ngFor="let project of projectType.projects">
+            <div class="info">
+                <div class="infohead">
+                    <div class="title">
+                        {{project.name}}
+                    </div>
+                    <div class="links">
+                        <a *ngIf="project.github_link != ''" 
+                        [href]="project.github_link" 
+                        target="_blank">
+                            <fa-icon [icon]="faGithubAlt"></fa-icon>
+                        </a>
+                        <a *ngIf="project.web_link != ''" 
+                        [href]="project.web_link" 
+                        target="_blank">
+                            <fa-icon [icon]="faLink"></fa-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="description">
+                    {{project.description}}
+                </div>
+                <div class="tools">
+                    Tools: {{project.tools}}
+                </div>
+            </div>
+            <img class="img" [src]="project.img" alt="IMG">
+        </div>
+    </div>
+</div>

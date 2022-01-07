@@ -1,0 +1,25 @@
+$base-green: rgb(201, 245, 201)
+$base-purple: rgb(215, 208, 238)
+$base: rgb(30, 30, 30)
+$base-gray: rgb(40, 40, 40)
+$univ-font: Verdana
+
+@font-face
+    font-family: $univ-font
+    src: local("Berlin"), url(./assets/fonts/Nanami.ttf) format("truetype")
+div, a, button, app-root
+    font-family: $univ-font
+    color: $base-green
+
+body
+    background-color: black
+
+app-root
+    width: 100%
+
+::selection
+    background: $base-green
+    color: $base
+::-moz-selection
+    background: $base-green
+    color: $base
