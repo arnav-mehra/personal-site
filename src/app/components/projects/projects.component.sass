@@ -5,17 +5,24 @@
     font-size: 24px
     margin: 30px 0
 
+@media (min-width: 751px)
+    .img
+        margin: 10px 0 10px 10px
+        width: 140px !important
+        border-radius: 5px
+@media (max-width: 750px)
+    .img
+        margin: 10px 0 10px 10px
+        width: 160px !important
+        border-radius: 5px  
+
 .card
     display: flex
     justify-content: space-between
+    align-items: center
     padding: 10px 0
     width: 100%
 
-    .img
-        padding: 10px 0 10px 10px
-        min-height: 100px
-        min-width: 100px
-    
     .info
         padding: 10px 10px 10px 0
         min-height: 100px

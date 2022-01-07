@@ -18,9 +18,9 @@
             "projects": [
                 {
                     "name": "Memory Chess", 
-                    "description": "Created a chess memory game to run on a Raspberry Pi handheld through the browser. Implemented my engine using WebAssembly within ReactJS", 
+                    "description": "Created a chess memory game where players are awarded points for memorizing piece identities that was capable of running on a Raspberry Pi handheld. Using WebAssembly within a web application, I was able to implement version of the engine with multiple levels of difficulty", 
                     "tools": "C++, ReactJS, WebAssembly, Emscripten",
-                    "img": "",
+                    "img": "assets/memchess.PNG",
                     "web_link": "https://memory-chess.netlify.app/",
                     "github_link": "https://github.com/ArnavMeh/MemoryChess"
                 },
@@ -28,7 +28,7 @@
                     "name": "Chess Engine", 
                     "description": "Researched and implemented various algorithmic strategies, including bitwise representation and manipulation, alpha-beta pruning, move ordering, transposition tables, etc to create a chess engine. Additionally, I coded a Windows application memory game with the engine using wxWidgets", 
                     "tools": "C++, WxWidgets",
-                    "img": "",
+                    "img": "assets/wxchess.PNG",
                     "web_link": "",
                     "github_link": "https://github.com/ArnavMeh/ArnavChess"
                 },
@@ -36,15 +36,15 @@
                     "name": "HSE Safety", 
                     "description": "Collaborated with school administration to plan and create a system for staff to quickly and securely access critical safety data. Involved creating a navigation system for a PDF, drill info extraction and room searching, and contact searching", 
                     "tools": "ReactJS, MongoDB, Express.Js, Node.Js, Ant Design, React-PDF",
-                    "img": "",
+                    "img": "assets/hsesafe.PNG",
                     "web_link": "",
                     "github_link": ""
                 },
                 {
                     "name": "HSE Courses", 
-                    "description": "Developed a MERN web application to enhance students course planning, reduce course guide maintenance, and improve course offering and diploma requirement awareness. Students can search for courses with variety of feilds, add courses to a four-year plan, and see statistics on their selections whereas counselors can easily update diploma and course data and view student plans and notes", 
+                    "description": "Developed a MERN web application to enhance students course planning, reduce course guide maintenance, and improve course offering and diploma requirement awareness. In the first year of its implementation, we were able to hit over 500 users and reviews very positive feedback", 
                     "tools": "ReactJS, MongoDB, Express.Js, Node.Js, Ant Design",
-                    "img": "",
+                    "img": "assets/hsecourse.PNG",
                     "web_link": "https://hsecourses.netlify.app/",
                     "github_link": ""
                 }
