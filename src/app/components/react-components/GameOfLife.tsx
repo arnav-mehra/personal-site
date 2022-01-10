@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 
 const dbcolor = "rgb(15, 15, 15)";
 const bigDot = 10;
@@ -55,7 +55,7 @@ const GameOfLife = () => {
             var r = indexArr[i][0] + rowDisp;
             var c = indexArr[i][1] + colDisp;
             if (r < rows && c < cols) {
-                dots[r][c] = true;
+                dots[r][c] = 1;
             }
         }
     }
@@ -63,7 +63,7 @@ const GameOfLife = () => {
         var rows = getRows();
         var cols = getCols();
         var dotArr = Array(rows).fill(null).map(
-            () => Array(cols).fill(false));
+            () => Array(cols).fill(0));
         for (var n = 0; n < num; n++) {
             var shape = ['glider', 'blinker', 'toad'][rand(3)];
             const indexArr = getShape(shape);
@@ -73,7 +73,7 @@ const GameOfLife = () => {
                 var r = indexArr[i][0] + rowDisp;
                 var c = indexArr[i][1] + colDisp;
                 if (r < rows && c < cols) {
-                    dotArr[r][c] = true;
+                    dotArr[r][c] = 1;
                 }
             }
         }
@@ -89,41 +89,41 @@ const GameOfLife = () => {
         const r = dots.length - 1;
         const c = dots[0].length - 1;
         const newDots = Array(r + 1).fill(null).map(
-            () => Array(c + 1).fill(false));
+            () => Array(c + 1).fill(0));
         for (var j = 1; j < c; j++) {
             var neighbors = dots[0][j-1] + dots[0][j+1] 
                 + dots[1][j]  + dots[1][j+1] + dots[1][j-1];
             if (dots[0][j]) {
-                newDots[0][j] = (neighbors == 2 || neighbors == 3);
+                newDots[0][j] = ((neighbors == 2 || neighbors == 3)? 1 : 0);
             } else {
-                newDots[0][j] = (neighbors == 3);
+                newDots[0][j] = (neighbors == 3? 1 : 0);
             }
         }
         for (var j = 1; j < c; j++) {
             var neighbors = dots[r][j-1] + dots[r][j+1] 
                 + dots[r][j]  + dots[r-1][j+1] + dots[r-1][j-1];
             if (dots[r][j]) {
-                newDots[r][j] = (neighbors == 2 || neighbors == 3);
+                newDots[r][j] = ((neighbors == 2 || neighbors == 3)? 1 : 0);
             } else {
-                newDots[r][j] = (neighbors == 3);
+                newDots[r][j] = (neighbors == 3? 1 : 0);
             }
         }
         for (var i = 1; i < r; i++) {
             var neighbors = dots[i-1][0] + dots[i+1][0] 
                 + dots[i][1]  + dots[i+1][1] + dots[i-1][1];
             if (dots[i][0]) {
-                newDots[i][0] = (neighbors == 2 || neighbors == 3);
+                newDots[i][0] = ((neighbors == 2 || neighbors == 3)? 1 : 0);
             } else {
-                newDots[i][0] = (neighbors == 3);
+                newDots[i][0] = (neighbors == 3? 1 : 0);
             }
         }
         for (var i = 1; i < r; i++) {
             var neighbors = dots[i-1][c] + dots[i+1][c] 
                 + dots[i][c-1]  + dots[i+1][c-1] + dots[i-1][c-1];
             if (dots[i][c]) {
-                newDots[i][c] = (neighbors == 2 || neighbors == 3);
+                newDots[i][c] = ((neighbors == 2 || neighbors == 3)? 1 : 0);
             } else {
-                newDots[i][c] = (neighbors == 3);
+                newDots[i][c] = (neighbors == 3? 1 : 0);
             }
         }
         for (var i = 1; i < r; i++) {
@@ -132,9 +132,9 @@ const GameOfLife = () => {
                     + dots[i+1][j] + dots[i-1][j] + dots[i+1][j+1]
                     + dots[i-1][j-1] + dots[i-1][j+1] + dots[i+1][j-1];
                 if (dots[i][j]) {
-                    newDots[i][j] = (neighbors == 2 || neighbors == 3)
+                    newDots[i][j] = ((neighbors == 2 || neighbors == 3)? 1 : 0);
                 } else {
-                    newDots[i][j] = (neighbors == 3)
+                    newDots[i][j] = (neighbors == 3? 1 : 0);
                 }
             }
         }
@@ -172,13 +172,16 @@ const GameOfLife = () => {
                             <span
                                 style={{
                                     width: cellSize,
-                                    height: cellSize
+                                    height: cellSize,
+                                    
                                 }}
                             >
                                 <div
                                     style={{
-                                        width: dot? bigDot : smallDot,
-                                        height: dot? bigDot : smallDot,
+                                        width: bigDot,
+                                        height: bigDot,
+                                        transition: "transform 0.3s",
+                                        transform: dot? "scale(1)" : "scale(0.5)",
                                         background: dbcolor,
                                         borderRadius: '50%'
                                     }}
