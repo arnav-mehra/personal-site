@@ -1,40 +1,25 @@
 <div (window:resize)="updateWidth()">
-    <div class="home-panel" *ngIf="width > 750">
-        <div class="panel-feature-2">
+    <!-- <div style="height: 73vh"></div> -->
+    <div class="home-panel" *ngIf="width > 650">
+        <div class="panel-feature">
             <img src="assets/seniorpic.jpg" alt="IMG">
         </div>
         <div class=buffer></div>
         <div class="panel-text">
             <div class="panel-title">Who Am I?</div>
             <div class="panel-description">
-                Hi, my name is Arnav Mehra and I am currently a freshman 
-                at Purdue University studying Computer Science.
-                
-                My interest in CS started just a few years ago when 
-                I identified a problem in my school and decided to
-                solve it via an app I called "HSE Courses".
-                Ever since then, the potential impacts of CS 
-                have fascinated me, driving me to explore as much 
-                about this field as possible.
+                {{who_text}}
             </div>
         </div>
     </div>
-    <div class="home-panel" *ngIf="width < 750">
+    <div class="home-panel" *ngIf="width <= 650">
         <div class="panel-text">
             <div class="panel-title">Who Am I?</div>
             <div class="panel-description">
-                Hi, my name is Arnav Mehra and I am currently a freshman 
-                at Purdue University studying Computer Science.
-                
-                My interest in CS started just a few years ago when 
-                I identified a problem in my school and decided to
-                solve it via an app I called "HSE Courses".
-                Ever since then, the potential impacts of CS 
-                have fascinated me, driving me to explore as much 
-                about this field as possible.
+                {{who_text}}
             </div>
         </div>
-        <div class="panel-feature-2">
+        <div class="panel-feature">
             <img src="assets/seniorpic.jpg" alt="IMG">
         </div>
     </div>
@@ -52,7 +37,7 @@
             <a class="panel-link" href="/projects" routerLinkActive="active">[See Projects]</a>
         </div>
         <div class=buffer></div>
-        <div class="panel-feature-1">
+        <div class="panel-feature">
             <chess-embedded></chess-embedded>
         </div>
     </div>

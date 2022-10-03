@@ -13,11 +13,11 @@ const bSqColor =
 // 'rgb(30, 30, 30)';
 // 'rgb(39, 67, 61)';
 const wPcColor = 
-'rgb(201, 245, 201)';
+'#8AB6F9';
 const bPcColor = 
 // 'rgb(30, 30, 30)';
 // 'rgb(71, 95, 81)';
-'rgb(215, 208, 238)';
+'#CADCFC';
 const moveFreq = 1;
 const flipped = false;
 

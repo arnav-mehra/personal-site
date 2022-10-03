@@ -4,6 +4,22 @@
             "type": "Ongoing Projects",
             "projects": [
                 {
+                    "name": "Web Dev Club's Krannert Project", 
+                    "description": "Leading a group of 20 students towards creating an ecommerce/networking application for connecting musical artists to venue managers.",
+                    "tools": "ReactJS, Express.js, MongoDB",
+                    "img": "",
+                    "web_link": "",
+                    "github_link": ""
+                },
+                {
+                    "name": "Listening Party App", 
+                    "description": "Producing a listening party application that allows users to listen to music in a unified and collaborative manner, independent of their platform preference or subscriptions.",
+                    "tools": "Flutter, Express.js, SQL",
+                    "img": "",
+                    "web_link": "",
+                    "github_link": ""
+                },
+                {
                     "name": "Rubik's Cube Solver", 
                     "description": "Implemented a Rubik's Cube Solving Algorithm applying Kociemba's Two-Step process. For implementation in Purdue ARC Club's Rubik's Cube Solver.", 
                     "tools": "C++",
@@ -18,15 +34,15 @@
             "projects": [
                 {
                     "name": "Memory Chess", 
-                    "description": "Created a chess memory game where players are awarded points for memorizing piece identities that was capable of running on a Raspberry Pi handheld. Using WebAssembly within a web application, I was able to implement version of the engine with multiple levels of difficulty", 
-                    "tools": "C++, ReactJS, WebAssembly, Emscripten",
+                    "description": "Created a chess memory game where players are awarded points for memorizing piece identities that was capable of running on a Raspberry Pi handheld. Using WebAssembly within a web application, I was able to implement version of the engine with multiple levels of difficulty.", 
+                    "tools": "C++, ReactJS, WebAssembly",
                     "img": "assets/memchess.PNG",
                     "web_link": "https://memory-chess.netlify.app/",
                     "github_link": "https://github.com/ArnavMeh/MemoryChess"
                 },
                 {
                     "name": "Chess Engine", 
-                    "description": "Researched and implemented various algorithmic strategies, including bitwise representation and manipulation, alpha-beta pruning, move ordering, transposition tables, etc to create a chess engine. Additionally, I coded a Windows application memory game with the engine using wxWidgets", 
+                    "description": "Researched and implemented various algorithmic strategies, including bitwise representation and manipulation, alpha-beta pruning, move ordering, transposition tables, etc to create a chess engine. Additionally, I coded a Windows application memory game with the engine using wxWidgets.", 
                     "tools": "C++, WxWidgets",
                     "img": "assets/wxchess.PNG",
                     "web_link": "",
@@ -34,7 +50,7 @@
                 },
                 {
                     "name": "HSE Safety", 
-                    "description": "Collaborated with school administration to plan and create a system for staff to quickly and securely access critical safety data. Involved creating a navigation system for a PDF, drill info extraction and room searching, and contact searching", 
+                    "description": "Collaborated with school administration to plan and create a system for staff to quickly and securely access critical safety data. Involved creating a navigation system for a PDF, drill info extraction and room searching, and contact searching.", 
                     "tools": "ReactJS, MongoDB, Express.Js, Node.Js, Ant Design, React-PDF",
                     "img": "assets/hsesafe.PNG",
                     "web_link": "",
@@ -42,7 +58,7 @@
                 },
                 {
                     "name": "HSE Courses", 
-                    "description": "Developed a MERN web application to enhance students course planning, reduce course guide maintenance, and improve course offering and diploma requirement awareness. In the first year of its implementation, we were able to hit over 500 users and reviews very positive feedback", 
+                    "description": "Developed a MERN web application to enhance students course planning, reduce course guide maintenance, and improve course offering and diploma requirement awareness. In the first year of its implementation, we were able to hit over 500 users and reviews very positive feedback.", 
                     "tools": "ReactJS, MongoDB, Express.Js, Node.Js, Ant Design",
                     "img": "assets/hsecourse.PNG",
                     "web_link": "https://hsecourses.netlify.app/",

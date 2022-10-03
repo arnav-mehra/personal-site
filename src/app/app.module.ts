@@ -17,7 +17,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ChessComponent } from './components/react-components/chess-embedded.component';
 import { GameOfLifeComponent } from './components/react-components/game-of-life-embedded.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserAnimationsModule,
     FontAwesomeModule,
     MatTooltipModule,
-    MatSidenavModule
+    MatSidenavModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

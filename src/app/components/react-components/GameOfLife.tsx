@@ -1,7 +1,8 @@
+import { FlexibleConnectedPositionStrategy } from '@angular/cdk/overlay';
 import React, {useState, useEffect} from 'react';
 
-const dbcolor = "rgb(15, 15, 15)";
-const bigDot = 10;
+const dbcolor = "rgb(10, 10, 10)";
+const bigDot = 12;
 const smallDot = 5;
 const cellSize = 24;
 
@@ -161,34 +162,29 @@ const GameOfLife = () => {
         <div style={{position: "fixed"}}>
             {dots.map((dotRow) => 
                 <div
-                    style={{
-                        display: "flex",
-                        justifyContent:"center",
-                        height: cellSize
-                    }}
+                    style={{display: "flex"}}
                 >
-                    {dotRow.map((dot) => {
-                        return (
-                            <span
+                    {dotRow.map((dot) => 
+                        <span
+                            style={{
+                                width: cellSize,
+                                height: cellSize,
+                                color: dbcolor
+                            }}
+                        >
+                            <div
                                 style={{
-                                    width: cellSize,
-                                    height: cellSize,
-                                    
+                                    width: bigDot,
+                                    height: bigDot,
+                                    transition: "transform 0.2s",
+                                    transform: dot? "scale(1)" : "scale(0.5)",
+                                    transitionTimingFunction: "steps(3, end)",
+                                    backgroundColor: dbcolor,
+                                    borderRadius: '50%'
                                 }}
-                            >
-                                <div
-                                    style={{
-                                        width: bigDot,
-                                        height: bigDot,
-                                        transition: "transform 0.3s",
-                                        transform: dot? "scale(1)" : "scale(0.5)",
-                                        background: dbcolor,
-                                        borderRadius: '50%'
-                                    }}
-                                />
-                            </span>
-                        )
-                    })}
+                            />
+                        </span>
+                    )}
                 </div>
             )}
         </div>

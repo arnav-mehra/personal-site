@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { faGithub, faGithubAlt, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
+
 
 declare var require: any
 
@@ -9,6 +10,7 @@ declare var require: any
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.sass']
 })
+
 
 export class FooterComponent implements OnInit {
 
@@ -31,17 +33,24 @@ export class FooterComponent implements OnInit {
       icon: faDownload
     }
   ]
-
-
   FileSaver = require('file-saver');
-
   width: number = window.innerWidth;
+
+  isLeft: boolean = true;
 
   constructor() {}
   ngOnInit(): void {}
 
   updateWidth() {
     this.width = window.innerWidth;
+  }
+  onDrag(event: any) {
+    var thresold = (this.isLeft? 2/3 : 1/3) * window.innerWidth;
+    if (event.event.x) {
+      this.isLeft = event.event.x < thresold;
+    } else {
+      this.isLeft = event.event.touches[0].clientX < thresold;
+    }
   }
 
   getAction(itemTitle: string) {

@@ -3,22 +3,70 @@
     display: flex
     justify-content: center
 
-.content
-    margin: 100px 0 0 0
-    width: calc(100% - 160px)
-    max-width: 1000px
+    .content-container
+        width: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        overflow: hidden
 
-@media (max-width: 750px)
+        .content
+            display: flex
+            justify-content: center
+            max-width: 900px
+            min-height: calc(100vh - 190px)
+
+@media (min-width: 751px)
     .content
         margin: 100px 0 0 0
-        width: calc(100% - 60px)
-    
+        width: calc(100% - 160px)
+@media (max-width: 750px)
+    .content
+        margin: 80px 0 0 0
+        width: 90%
 
 .bg-component
     width: 100%
     position: absolute
-    top: 0px
+    bottom: 0px
     left: 0px
     z-index: -1
     overflow: hidden
 
+    
+
+.ocean 
+    width: 100vw !important
+    overflow: hidden
+    display: none
+    height: 200px
+    margin-bottom: -70px
+    transform: scaleY(0.4)
+    margin-top: -40px
+    
+    .wave
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x
+        width: 6400px
+        margin-top: 20px
+        grid-column: 1
+        grid-row: 1
+        filter: brightness(0) saturate(100%) invert(96%) sepia(6%) saturate(1184%) hue-rotate(58deg) brightness(97%) contrast(99%)
+        
+    .wave:nth-of-type(1)
+        animation: wave 6s cubic-bezier(0.36,0.45,0.63,0.53) -.1s infinite, swell 6s ease -1s infinite
+    .wave:nth-of-type(2)
+        animation: wave 4s cubic-bezier(0.36,0.45,0.63,0.53) -.125s infinite, swell 4s ease -1.25s infinite
+    .wave:nth-of-type(3)
+        animation: wave 8s cubic-bezier(0.36,0.45,0.63,0.53) -.25s infinite, swell 8s ease -2.5s infinite
+
+@keyframes wave
+    0%
+        margin-left: 0
+    100%
+        margin-left: -1600px
+@keyframes swell
+    0%, 100%
+        transform: translate3d(0,-25px,0)
+    50%
+        transform: translate3d(0,5px,0)

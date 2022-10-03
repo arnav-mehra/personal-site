@@ -1,44 +1,40 @@
-.card
-    padding: 30px 0px
-
-
-    
 .title
     font-size: 24px
     span
-        font-size: 14px
+        font-size: 20px
 .gpa
-    color: rgb(215, 208, 238)
-
-
-
+    color: #CADCFC
+    font-size: 18px
 .list
     width: 100%
-    margin: 20px 0 40px 25px
-
+    margin: 20px 0 40px 20px
     div
-        margin-bottom: 5px
-        font-size: 18px
+        margin-bottom: 10px
+        font-size: 20px
     li
+        margin-top: 5px
         margin-left: 10px
         font-size: 14px
         span
-            color: rgb(215, 208, 238)
-        
+            color: #CADCFC
+.body
+    display: flex
+.head
+    width: 100%
+    
 
-@media (max-width: 470px)
+@media (max-width: 550px)
     .body
-        display: flex
         margin-bottom: 30px
         flex-direction: column
         .list
             margin: 10px 0 0px 10px
+    .title
+        margin-bottom: 5px
     .head
-        width: 100%
-@media (min-width: 471px)
-    .body
-        display: flex
+        margin: 40px 0 5px 0
+@media (min-width: 551px)
     .head
-        width: 100%
         display: flex
         justify-content: space-between
+        margin: 80px 0 10px 0
