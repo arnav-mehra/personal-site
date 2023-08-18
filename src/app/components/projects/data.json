@@ -4,28 +4,44 @@
             "type": "Ongoing Projects",
             "projects": [
                 {
-                    "name": "Web Dev Club's Krannert Project", 
-                    "description": "Leading a group of 20 students towards creating an ecommerce/networking application for connecting musical artists to venue managers.",
-                    "tools": "ReactJS, Express.js, MongoDB",
+                    "name": "Abseil Hash Map (Since 7/23)", 
+                    "description": "Implementing the hash map library used internally by Google in Rust. Utilizing cool optimizations enabled by the Swiss table design, such as the use of SIMD instructions.", 
+                    "tools": "Rust, Criterion",
                     "img": "",
                     "web_link": "",
+                    "github_link": "https://github.com/arnav-mehra/abseil-flat-hash"
+                },
+                {
+                    "name": "A-Stack (Since 6/23)", 
+                    "description": "Creating my own web development stack because the world definitely needs another one, hehe. Currently, I am working on the frontend JavaScript library. So far, it supports client-side rendering and static site generation, but I plan to finish adding server-side rendering in the near future.", 
+                    "tools": "TypeScript, JavaScript, HTML, Node.js, Rollup",
+                    "img": "",
+                    "web_link": "",
+                    "github_link": "https://github.com/arnav-mehra/a-stack"
+                },
+                {
+                    "name": "Townie (Since 1/23)", 
+                    "description": "A mobile web game where players explore new destinations in the form of a competitive scavenger hunt. This was a group project (4 others) and I was responsible for UI design, stack, and architecture. I worked on features including: live game updates and chat via WebSockets, in-game maps via Mapbox, Stripe integration for premium subscriptions, and auth via JSON Web Token and Twilio 2FA. You can check out the live version via the link.", 
+                    "tools": "Svelte, WebSocket, JWT, Django, ArangoDB, Mapbox, Stripe, Twilio, AWS (Lambda, API Gateway: WebSocket API, EC2), Redis",
+                    "img": "assets/townie.PNG",
+                    "web_link": "https://townie-game.vercel.app/",
                     "github_link": ""
                 },
                 {
-                    "name": "Listening Party App", 
-                    "description": "Producing a listening party application that allows users to listen to music in a unified and collaborative manner, independent of their platform preference or subscriptions.",
-                    "tools": "Flutter, Express.js, SQL",
+                    "name": "My Personal Site (Since 1/22)", 
+                    "description": "The site you are using right now. The site, while being based in Angular, also uses React components, which is kinda cool. In fact, the background (which is Conway's Game of Life if you haven't noticed) is a React component I had written prior. I plan to rewrite this site in A-Stack in the future, but the library is still in development.", 
+                    "tools": "Angular, React, SASS",
                     "img": "",
-                    "web_link": "",
-                    "github_link": ""
+                    "web_link": "https://arnavmehra.com/",
+                    "github_link": "https://github.com/arnav-mehra/personal-site"
                 },
                 {
-                    "name": "Rubik's Cube Solver", 
-                    "description": "Implemented a Rubik's Cube Solving Algorithm applying Kociemba's Two-Step process. For implementation in Purdue ARC Club's Rubik's Cube Solver.", 
-                    "tools": "C++",
-                    "img": "",
-                    "web_link": "",
-                    "github_link": ""
+                    "name": "Chess Engine (Since 1/21)", 
+                    "description": "A chess engine I have been developing off and on (but mostly off). All versions use bitboard representation and the mini-max algorithm with some cool enhancements (maybe I should try Monte Carlo tree search in the future?). Currently, V1 from 2021 is playable via the link. Meanwhile, V3 is still in development and will evaluate positions using an efficiently updateable neural network (NNUE).", 
+                    "tools": "C++, Python, NumPy, Pandas, React, WASM",
+                    "img": "assets/mychess.PNG",
+                    "web_link": "https://my-chess-engine.netlify.app/",
+                    "github_link": "https://github.com/arnav-mehra/mychess"
                 }
             ]
         },
@@ -33,35 +49,125 @@
             "type": "Past Projects",
             "projects": [
                 {
-                    "name": "Memory Chess", 
-                    "description": "Created a chess memory game where players are awarded points for memorizing piece identities that was capable of running on a Raspberry Pi handheld. Using WebAssembly within a web application, I was able to implement version of the engine with multiple levels of difficulty.", 
-                    "tools": "C++, ReactJS, WebAssembly",
-                    "img": "assets/memchess.PNG",
-                    "web_link": "https://memory-chess.netlify.app/",
-                    "github_link": "https://github.com/ArnavMeh/MemoryChess"
-                },
-                {
-                    "name": "Chess Engine", 
-                    "description": "Researched and implemented various algorithmic strategies, including bitwise representation and manipulation, alpha-beta pruning, move ordering, transposition tables, etc to create a chess engine. Additionally, I coded a Windows application memory game with the engine using wxWidgets.", 
-                    "tools": "C++, WxWidgets",
-                    "img": "assets/wxchess.PNG",
+                    "name": "Git Hook Fun (8/23 - 8/23)", 
+                    "description": "A fun mini-project where I made a githook that records user location data on commits. (Note: this is meant for voluntarily use during Purdue Hackers Hack Nights and not to be malicious in any way).", 
+                    "tools": "Bash, Node.js, MySQL",
+                    "img": "",
                     "web_link": "",
-                    "github_link": "https://github.com/ArnavMeh/ArnavChess"
+                    "github_link": "https://github.com/arnav-mehra/git-hook-fun"
                 },
                 {
-                    "name": "HSE Safety", 
+                    "name": "RN-Graph (Since 7/23)", 
+                    "description": "A node graph visualization library for react native. This was originally made for Purdue SigApp's Course Checker app, and is now a npm package to be used by anyone (viewable via the npmjs.com link).", 
+                    "tools": "Rust, Criterion",
+                    "img": "assets/rn-graph.png",
+                    "web_link": "https://www.npmjs.com/package/rn-graph",
+                    "github_link": "https://github.com/arnav-mehra/rn-graph"
+                },
+                {
+                    "name": "Drawtic Phone (1/23 - 1/23)",
+                    "description": "A project for Purdue's BoilerMake hackathon that made it into the finalists (top 10). This is a web game similar to Gartic Phone where players draw mid-air over their camera frame. Due to the poor performance of using MediaPipe in the browser, we have not hosted it yet, but see model web optimization as a potential future project.", 
+                    "tools": "React, Google MediaPipe, Flask, Redis, AWS S3",
+                    "img": "",
+                    "web_link": "https://devpost.com/software/drawticphone",
+                    "github_link": "https://github.com/arefmalek/drawticphone"
+                },
+                {
+                    "name": "The Data Mine - Corporate Partners (1/22 - 5/22)", 
+                    "description": "Worked with data scientists at American First Finance to analyze company data. Trained K-Nearest Neighbor and Linear Regression models to provide some insights to region performance and customer lifetime value.", 
+                    "tools": "Python, NumPy, Pandas, Scikit-Learn",
+                    "img": "",
+                    "web_link": "https://datamine.purdue.edu/corporate/americanfirstfinance/tdm_symposium2022_poster_american_first_finance.pdf",
+                    "github_link": ""
+                },
+                {
+                    "name": "HSE Safety (12/20 - 1/21)", 
                     "description": "Collaborated with school administration to plan and create a system for staff to quickly and securely access critical safety data. Involved creating a navigation system for a PDF, drill info extraction and room searching, and contact searching.", 
-                    "tools": "ReactJS, MongoDB, Express.Js, Node.Js, Ant Design, React-PDF",
+                    "tools": "React, Ant Design, Express.js, Node.js, MongoDB, React-PDF",
                     "img": "assets/hsesafe.PNG",
                     "web_link": "",
                     "github_link": ""
                 },
                 {
-                    "name": "HSE Courses", 
-                    "description": "Developed a MERN web application to enhance students course planning, reduce course guide maintenance, and improve course offering and diploma requirement awareness. In the first year of its implementation, we were able to hit over 500 users and reviews very positive feedback.", 
-                    "tools": "ReactJS, MongoDB, Express.Js, Node.Js, Ant Design",
+                    "name": "HSE Courses (11/20 - 5/21)", 
+                    "description": "Developed a MERN web application to enhance students course planning, reduce course guide maintenance, and improve course offering and diploma requirement awareness. In its first year of use, it hit over 500 users and received very positive feedback.", 
+                    "tools": "React, Ant Design, Express.js, Node.js, MongoDB",
                     "img": "assets/hsecourse.PNG",
-                    "web_link": "https://hsecourses.netlify.app/",
+                    "web_link": "https://hsecourses.app/",
+                    "github_link": ""
+                }
+            ]
+        },
+        {
+            "type": "Past School Projects",
+            "projects": [
+                {
+                    "name": "Shell from Scratch (CS 25200: Systems Programming)", 
+                    "description": "Programmed my own shell using C++, Lex, and Yacc. Learned about managing processes, file descriptors, signals, and more.", 
+                    "tools": "C++, Lex, Yacc",
+                    "img": "",
+                    "web_link": "",
+                    "github_link": ""
+                },
+                {
+                    "name": "Malloc from Scratch (CS 25200: Systems Programming)", 
+                    "description": "Recreated C's the memory allocator, the malloc function, from scratch. Learned about memory layout (arenas, free block lists, fence posts), alignment, coalescing, and more.",
+                    "tools": "C",
+                    "img": "",
+                    "web_link": "",
+                    "github_link": ""
+                },
+                {
+                    "name": "Used Car Pricing Study (STAT 35500: Statistics For Data Science)",
+                    "description": "Used statistics methods to analyze a dataset of used cars and their prices. Used linear regression, ANOVA, and more to uncover interesting insights in to the pricing of used cars.", 
+                    "tools": "R",
+                    "img": "",
+                    "web_link": "",
+                    "github_link": ""
+                },
+                {
+                    "name": "Graphics Engine from Scratch (CS 33400: Graphics Programming)",
+                    "description": "A cpu-based graphics engine where I derived the math for and implemented camera modeling, rasterization, model-space interpolation, shading, texture mapping, shadow mapping, environment mapping, and more.", 
+                    "tools": "C++",
+                    "img": "",
+                    "web_link": "",
+                    "github_link": ""
+                },
+                {
+                    "name": "Discussion Board App (CS 18000: Object Oriented Programming)",
+                    "description": "Created client-server application for managing discussion boards using sockets, multithreading, and Java Swing.", 
+                    "tools": "Java",
+                    "img": "",
+                    "web_link": "",
+                    "github_link": ""
+                }
+            ]
+        },
+        {
+            "type": "Future Project Interests/Ideas",
+            "projects": [
+                {
+                    "name": "A Hardware Desription Language", 
+                    "description": "Creating my own hardware description language (like Verilog) from scratch. I think it would be a good project to learn about compilers and about hardware design.",
+                    "tools": "Haskell",
+                    "img": "",
+                    "web_link": "",
+                    "github_link": ""
+                },
+                {
+                    "name": "Quantum Computer VM", 
+                    "description": "Creating a quatum computer virtual machine. I started looking into quantum computing 7/23 and was fascinated by how they work, so simulating one would be pretty cool.", 
+                    "tools": "Rust",
+                    "img": "",
+                    "web_link": "",
+                    "github_link": ""
+                },
+                {
+                    "name": "MediaPipe Web Optimization", 
+                    "description": "Optimizing MediaPipe for the web, likely by quantizing the model weights and using TensorFlow.js. This would be for use in the past project Drawtic Phone.", 
+                    "tools": "TensorFlow.js, Google MediaPipe, Python",
+                    "img": "",
+                    "web_link": "",
                     "github_link": ""
                 }
             ]

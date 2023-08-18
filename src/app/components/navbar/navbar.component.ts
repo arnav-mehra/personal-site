@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faHome, faSchool, faTasks } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faHome, faSchool, faTasks } from '@fortawesome/free-solid-svg-icons';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -7,13 +7,15 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.sass']
 })
+
 export class NavbarComponent implements OnInit {
 
   title: string = 'Arnav Mehra';
   menuItems = [
     { title: 'Home', link: '/home', icon: faHome }, 
     { title: 'Education', link: '/education', icon: faSchool }, 
-    { title: 'Projects', link: '/projects', icon: faTasks }
+    { title: 'Projects', link: '/projects', icon: faTasks },
+    { title: 'Work', link: '/work', icon: faBriefcase }
   ];
 
   faBars = faBars;

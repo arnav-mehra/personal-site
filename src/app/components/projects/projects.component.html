@@ -8,14 +8,18 @@
                         {{project.name}}
                     </div>
                     <div class="links">
-                        <a *ngIf="project.github_link != ''" 
-                        [href]="project.github_link" 
-                        target="_blank">
+                        <a
+                            *ngIf="project.github_link != ''" 
+                            [href]="project.github_link" 
+                            target="_blank"
+                        >
                             <fa-icon [icon]="faGithubAlt"></fa-icon>
                         </a>
-                        <a *ngIf="project.web_link != ''" 
-                        [href]="project.web_link" 
-                        target="_blank">
+                        <a
+                            *ngIf="project.web_link != ''" 
+                            [href]="project.web_link" 
+                            target="_blank"
+                        >
                             <fa-icon [icon]="faLink"></fa-icon>
                         </a>
                     </div>
@@ -23,11 +27,30 @@
                 <div class="description">
                     {{project.description}}
                 </div>
-                <div class="tools">
+                
+                <div class="tools" *ngIf="project.tools?.length" >
                     Tools: {{project.tools}}
                 </div>
             </div>
-            <img class="img" [src]="project.img" alt="IMG">
+
+            <img
+                *ngIf="project.img?.length"
+                class="img"
+                [src]="project.img"
+                alt="IMG"
+            >
+            <!-- <iframe
+                *ngIf="!(project.img?.length) && (project.web_link.length)"
+                class="img"
+                title="Web Link IFrame"
+                [src]="project.web_link | safe"
+            ></iframe>
+            <iframe
+                *ngIf="!(project.img?.length) && !(project.web_link?.length) && (project.github_link?.length)"
+                class="img"
+                title="GitHub Link IFrame"
+                [src]="project.github_link | safe"
+            ></iframe> -->
         </div>
     </div>
 </div>

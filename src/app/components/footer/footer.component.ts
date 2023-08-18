@@ -1,7 +1,6 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
-import { faGithub, faGithubAlt, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { Component, OnInit, Input } from '@angular/core';
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-
 
 declare var require: any
 
@@ -11,7 +10,6 @@ declare var require: any
   styleUrls: ['./footer.component.sass']
 })
 
-
 export class FooterComponent implements OnInit {
 
   @Input() isOutside: boolean = true;
@@ -19,7 +17,7 @@ export class FooterComponent implements OnInit {
   footerItems = [
     {
       title: "Github", 
-      link: "https://github.com/ArnavMeh",
+      link: "https://github.com/arnav-mehra",
       icon: faGithub
     },
     {
@@ -32,10 +30,10 @@ export class FooterComponent implements OnInit {
       link: "javascript:void(0)", 
       icon: faDownload
     }
-  ]
+  ];
+
   FileSaver = require('file-saver');
   width: number = window.innerWidth;
-
   isLeft: boolean = true;
 
   constructor() {}
