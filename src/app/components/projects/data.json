@@ -15,7 +15,7 @@
                     "name": "A-Stack (Since 6/23)", 
                     "description": "Creating my own web development stack because the world definitely needs another one, hehe. Currently, I am working on the frontend JavaScript library. So far, it supports client-side rendering and static site generation, but I plan to finish adding server-side rendering in the near future.", 
                     "tools": "TypeScript, JavaScript, HTML, Node.js, Rollup",
-                    "img": "",
+                    "img": "assets/a-stack-js-perf.PNG",
                     "web_link": "",
                     "github_link": "https://github.com/arnav-mehra/a-stack"
                 },
@@ -59,7 +59,7 @@
                 {
                     "name": "RN-Graph (Since 7/23)", 
                     "description": "A node graph visualization library for react native. This was originally made for Purdue SigApp's Course Checker app, and is now a npm package to be used by anyone (viewable via the npmjs.com link).", 
-                    "tools": "Rust, Criterion",
+                    "tools": "React Native",
                     "img": "assets/rn-graph.png",
                     "web_link": "https://www.npmjs.com/package/rn-graph",
                     "github_link": "https://github.com/arnav-mehra/rn-graph"
