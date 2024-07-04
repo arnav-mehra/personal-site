@@ -1,7 +1,7 @@
 import { FlexibleConnectedPositionStrategy } from '@angular/cdk/overlay';
 import React, {useState, useEffect} from 'react';
 
-const dbcolor = "rgb(10, 10, 10)";
+const dbcolor = "#0D0D0D";
 const bigDot = 12;
 const smallDot = 5;
 const cellSize = 24;

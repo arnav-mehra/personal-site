@@ -1,30 +1,41 @@
-<div (window:resize)="updateWidth()">
-    <!-- <div style="height: 73vh"></div> -->
-    <div class="home-panel" *ngIf="width > 650">
-        <div class="panel-feature">
-            <img src="assets/seniorpic.jpg" alt="IMG">
-        </div>
-        <div class=buffer></div>
+<div>
+    <div class="home-panel">
         <div class="panel-text">
-            <div class="panel-title">Who Am I?</div>
+            <div class="panel-banner">
+                <div class="panel-title">
+                    Arnav Mehra.
+                </div>
+                <div class="panel-interests">
+                    Software Engineer. Web Dev Instructor. Life-Long Learner.
+                </div>
+            </div>
+
             <div class="panel-description">
-                {{who_text}}
+                <span>
+                    Senior in Computer Science at Purdue that loves learning new languages, libraries, and frameworks, and building cool shit with them. Sometimes, I even make my own 👀.
+                </span>
+                <span>
+                    Check out my projects <a href="/projects">here</a>.
+                </span>
+            </div>
+
+            <div class="interest-container">
+                <div>Interests:</div>
+                <div class="interest">Web Applications</div>
+                <div class="interest">Programming Languages</div>
+                <div class="interest">AI</div>
             </div>
         </div>
-    </div>
-    <div class="home-panel" *ngIf="width <= 650">
-        <div class="panel-text">
-            <div class="panel-title">Who Am I?</div>
-            <div class="panel-description">
-                {{who_text}}
-            </div>
-        </div>
+
         <div class="panel-feature">
             <img src="assets/seniorpic.jpg" alt="IMG">
         </div>
     </div>
 
-    <div class="home-panel">
+    <!-- <div class="home-panel">
+        <div class="panel-feature">
+            <chess-embedded></chess-embedded>
+        </div>
         <div class="panel-text">
             <div class="panel-title">One Problem At A Time</div>
             <div class="panel-description">
@@ -36,9 +47,5 @@
             </div>
             <a class="panel-link" href="/projects" routerLinkActive="active">[See Projects]</a>
         </div>
-        <div class=buffer></div>
-        <div class="panel-feature">
-            <chess-embedded></chess-embedded>
-        </div>
-    </div>
+    </div> -->
 </div>

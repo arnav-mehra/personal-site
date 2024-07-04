@@ -6,13 +6,20 @@ $univ-font: Verdana
 
 @font-face
     font-family: $univ-font
-    src: local("Berlin"), url(./assets/fonts/Nanami.ttf) format("truetype")
+    src: local("Berlin"), url(./assets/fonts/Roboto.ttf) format("truetype")
 div, a, button, app-root
     font-family: $univ-font
-    color: $base-green
+    color: white
 
 body
-    background-color: black
+    background-color: #141414
+
+*::-webkit-scrollbar
+    width: 8px
+
+*::-webkit-scrollbar-thumb
+    background-color: white
+    border-radius: 5px
 
 app-root
     width: 100%
@@ -26,7 +33,7 @@ app-root
 
 #golId
     width: 100vw
-    height: calc(100vh - 110px)
+    height: 100vh
     padding-left: 4px
     display: flex
     justify-content: center

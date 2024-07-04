@@ -1,50 +1,37 @@
-.title
-    font-size: 24px
-    color: #CADCFC
-    span
-        font-size: 20px
-.gpa
-    font-size: 18px
-
-.list
+.card
     width: 100%
-    margin: 20px 0 40px 20px
-
-    .sub-title
-        margin-bottom: 10px
-        font-size: 20px
-        color: #CADCFC
-    
-    .sub-section
-        margin-top: 10px
-        padding-left: 30px
-        font-size: 16px
-        color: #CADCFC
-    
-    li
-        margin-top: 5px
-        margin-left: 10px
-        font-size: 14px
-        span
-            color: #CADCFC
-.body
     display: flex
-.head
-    width: 100%
-    
+    flex-direction: column
+    gap: 40px
 
-@media (max-width: 550px)
-    .body
-        margin-bottom: 30px
-        flex-direction: column
-        .list
-            margin: 10px 0 0px 10px
-    .title
-        margin-bottom: 5px
-    .head
-        margin: 40px 0 5px 0
-@media (min-width: 551px)
-    .head
+    .entry
         display: flex
-        justify-content: space-between
-        margin: 80px 0 10px 0
+        flex-direction: column
+        gap: 16px
+
+        .head
+            display: flex
+            justify-content: space-between
+            width: 100%
+            line-height: 32px
+
+            .title
+                font-size: 24px
+                span
+                    font-size: 20px
+            .gpa
+                font-size: 18px
+                min-width: fit-content
+
+        .body
+            display: flex
+            flex-wrap: wrap
+            gap: 16px
+            // padding: 16px
+
+            .titled-list
+                margin-left: 16px
+                width: 370px
+                line-height: 24px
+                .list
+                    margin-left: 16px

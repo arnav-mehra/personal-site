@@ -1,43 +1,48 @@
 {
     "projectData": [
         {
-            "type": "Ongoing Projects",
+            "type": "Ongoing Personal Projects",
             "projects": [
                 {
-                    "name": "Abseil Hash Map (Since 7/23)", 
-                    "description": "Implementing the hash map library used internally by Google in Rust. Utilizing cool optimizations enabled by the Swiss table design, such as the use of SIMD instructions.", 
-                    "tools": "Rust, Criterion",
-                    "img": "",
+                    "name": "Unifier",
+                    "date": "Since 4/24",
+                    "description": "As personal challenge, I challenged myself to implement unification (think prolog) without references (purely my own design). Currently, it is capable of solving for some more basic compositions of relations, but through various optimizations, I hope to make it usable for type inference for A-Script.", 
+                    "tools": "Scala",
+                    "img": "assets/unification.PNG",
                     "web_link": "",
-                    "github_link": "https://github.com/arnav-mehra/abseil-flat-hash"
+                    "github_link": "https://github.com/arnav-mehra/unification"
                 },
                 {
-                    "name": "A-Stack (Since 6/23)", 
-                    "description": "Creating my own web development stack because the world definitely needs another one, hehe. Currently, I am working on the frontend JavaScript library. So far, it supports client-side rendering and static site generation, but I plan to finish adding server-side rendering in the near future.", 
-                    "tools": "TypeScript, JavaScript, HTML, Node.js, Rollup",
-                    "img": "assets/a-stack-js-perf.PNG",
+                    "name": "A-Script: Programming Language",
+                    "date": "Since 1/24",
+                    "description": "Crafting my own programming language in Scala. My goal with the project was not only to learn how programming languages are built, but make one thats tailored to my preferences and pretty fast. To do this, I am currently using optimizations like compile-to-closures and type-checking to create static types. In the future, I plan to add type inference, but only once my unification project is finished.", 
+                    "tools": "Scala",
+                    "img": "assets/a-script.PNG",
+                    "web_link": "",
+                    "github_link": "https://github.com/arnav-mehra/a-script"
+                },
+                {
+                    "name": "A-Stack: Web Framework", 
+                    "date": "Since 6/23",
+                    "description": "A full-stack web framework I am building with performance in mind. It supports client-side rendering and static site generation. It also has a DSL made in Rust. Currently, I am working on the backend framework and an efficient build tool for the frontend.", 
+                    "tools": "TypeScript, JavaScript, HTML, Node.js, Rollup, Rust, Pest",
+                    "img": "assets/a-stack.PNG",
                     "web_link": "",
                     "github_link": "https://github.com/arnav-mehra/a-stack"
                 },
                 {
-                    "name": "Townie (Since 1/23)", 
-                    "description": "A mobile web game where players explore new destinations in the form of a competitive scavenger hunt. This was a group project (4 others) and I was responsible for UI design, stack, and architecture. I worked on features including: live game updates and chat via WebSockets, in-game maps via Mapbox, Stripe integration for premium subscriptions, and auth via JSON Web Token and Twilio 2FA. You can check out the live version via the link.", 
-                    "tools": "Svelte, WebSocket, JWT, Django, ArangoDB, Mapbox, Stripe, Twilio, AWS (Lambda, API Gateway: WebSocket API, EC2), Redis",
-                    "img": "assets/townie.PNG",
-                    "web_link": "https://townie-game.vercel.app/",
-                    "github_link": ""
-                },
-                {
-                    "name": "My Personal Site (Since 1/22)", 
-                    "description": "The site you are using right now. The site, while being based in Angular, also uses React components, which is kinda cool. In fact, the background (which is Conway's Game of Life if you haven't noticed) is a React component I had written prior. I plan to rewrite this site in A-Stack in the future, but the library is still in development.", 
+                    "name": "This Site", 
+                    "date": "Since 1/22",
+                    "description": "I hope you liked the thumbnail. This is the site you are using right now. Mistakenly written in Angular, this site also uses some React components I had made prior including the background (Conway's Game of Life) which is kinda cool. I plan to rewrite this site in A-Stack once it is finished.", 
                     "tools": "Angular, React, SASS",
-                    "img": "",
+                    "img": "assets/this-site.png",
                     "web_link": "https://arnavmehra.com/",
                     "github_link": "https://github.com/arnav-mehra/personal-site"
                 },
                 {
-                    "name": "Chess Engine (Since 1/21)", 
-                    "description": "A chess engine I have been developing off and on (but mostly off). All versions use bitboard representation and the mini-max algorithm with some cool enhancements (maybe I should try Monte Carlo tree search in the future?). Currently, V1 from 2021 is playable via the link. Meanwhile, V3 is still in development and will evaluate positions using an efficiently updateable neural network (NNUE).", 
+                    "name": "Chess Engine", 
+                    "date": "Since 1/21",
+                    "description": "A chess engine I have been developing on and off. All versions use bitboard representation and the mini-max algorithm with some cool enhancements (maybe I should try Monte Carlo tree search in the future?). Currently, V1 from 2021 is playable via the link. Meanwhile, V3 is still in development and will evaluate positions using an efficiently updateable neural network (NNUE).", 
                     "tools": "C++, Python, NumPy, Pandas, React, WASM",
                     "img": "assets/mychess.PNG",
                     "web_link": "https://my-chess-engine.netlify.app/",
@@ -46,10 +51,56 @@
             ]
         },
         {
-            "type": "Past Projects",
+            "type": "Past Personal Projects",
             "projects": [
                 {
-                    "name": "Git Hook Fun (8/23 - 8/23)", 
+                    "name": "L-System Visualizer", 
+                    "date": "5/24 - 6/24",
+                    "description": "Similar to Conway's Game of Life, L-systems are about producing complexity from a simple ruleset. In the case of L-systems, complexity emerges from the recursive expansion of string mappings. Most interestingly, when converted into basic turtle instructions produces fractals. For this visualizer, I created my own eDSL to specify the system and drawing rules, and used Three.js to display the result of the turtle drawing. Play around with it yourself below!", 
+                    "tools": "Three.js, React.js",
+                    "img": "assets/l-sys-viz.PNG",
+                    "web_link": "https://l-sys-viz.netlify.app/",
+                    "github_link": "https://github.com/arnav-mehra/l-system-visualizer"
+                },
+                {
+                    "name": "Vector Program Synthesizer",
+                    "date": "3/24 - 5/24",
+                    "description": "Given sets of example input and output vectors drawn in a VR interface, it finds the closest matching program. To make it possible, we utilize bottom-up program generation, type pruning, duplicate program detection via random environment evaluation and locality-sensitive hashing, a novel metric for program error involving AST differentiation and gradient descent, and program complexity-based error scaling to account for Occam's razor.", 
+                    "tools": "C#, Unity, VR",
+                    "img": "assets/vsynth.mp4",
+                    "web_link": "",
+                    "github_link": "https://github.com/arnav-mehra/vsynth"
+                },
+                {
+                    "name": "Nando: Circuit Simulator",
+                    "date": "9/23 - 1/24",
+                    "description": "Two projects, actually. One is a circuit simulator made in C++ that simulates an ALU. The other is a circuit builder and runner made with Solid.js with customizable logic gates and local save capabilities via IndexedDB. I had planned to compile the C++ to WASM and use that instead of the JavaScript simulator, but am not too keen on this for the time being.", 
+                    "tools": "C++, Solid.js, IndexedDB",
+                    "img": "assets/nando-sim.PNG",
+                    "web_link": "https://nando-sim.netlify.app/",
+                    "github_link": "https://github.com/arnav-mehra/nando"
+                },
+                {
+                    "name": "Abseil Hash Map", 
+                    "date": "7/23 - 9/23",
+                    "description": "Implemented the hash map library used internally by Google in Rust, utilizing some cool optimizations like Swiss Tables and SIMD instructions.", 
+                    "tools": "Rust, Criterion",
+                    "img": "",
+                    "web_link": "",
+                    "github_link": "https://github.com/arnav-mehra/abseil-flat-hash"
+                },
+                {
+                    "name": "Townie: Web Game", 
+                    "date": "1/23 - 4/23",
+                    "description": "A mobile web game where players explore new destinations in the form of a competitive scavenger hunt. This was a group project (4 others) and I was responsible for UI design, stack, and architecture. I worked on features including: live game updates and chat via WebSockets, in-game maps via Mapbox, Stripe integration for premium subscriptions, and auth via JSON Web Token and Twilio 2FA. You can check out the live version via the link.", 
+                    "tools": "Svelte, Django, ArangoDB, Mapbox, Stripe, Twilio, AWS (Lambda, API Gateway: WebSocket API, EC2), Redis",
+                    "img": "assets/townie.PNG",
+                    "web_link": "https://townie-game.vercel.app/",
+                    "github_link": ""
+                },
+                {
+                    "name": "GitHook Fun", 
+                    "date": "8/23 - 8/23",
                     "description": "A fun mini-project where I made a githook that records user location data on commits. (Note: this is meant for voluntarily use during Purdue Hackers Hack Nights and not to be malicious in any way).", 
                     "tools": "Bash, Node.js, MySQL",
                     "img": "",
@@ -57,15 +108,17 @@
                     "github_link": "https://github.com/arnav-mehra/git-hook-fun"
                 },
                 {
-                    "name": "RN-Graph (Since 7/23)", 
-                    "description": "A node graph visualization library for react native. This was originally made for Purdue SigApp's Course Checker app, and is now a npm package to be used by anyone (viewable via the npmjs.com link).", 
+                    "name": "RN-Graph: Graph Visualizer", 
+                    "date": "7/23-8/23",
+                    "description": "A node graph visualization library for react native. This was originally made for Purdue SigApp's Course Checker app, and is now a npm package.", 
                     "tools": "React Native",
                     "img": "assets/rn-graph.png",
                     "web_link": "https://www.npmjs.com/package/rn-graph",
                     "github_link": "https://github.com/arnav-mehra/rn-graph"
                 },
                 {
-                    "name": "Drawtic Phone (1/23 - 1/23)",
+                    "name": "Drawtic Phone: Web Game",
+                    "date": "1/23 - 1/23",
                     "description": "A project for Purdue's BoilerMake hackathon that made it into the finalists (top 10). This is a web game similar to Gartic Phone where players draw mid-air over their camera frame. Due to the poor performance of using MediaPipe in the browser, we have not hosted it yet, but see model web optimization as a potential future project.", 
                     "tools": "React, Google MediaPipe, Flask, Redis, AWS S3",
                     "img": "",
@@ -73,101 +126,21 @@
                     "github_link": "https://github.com/arefmalek/drawticphone"
                 },
                 {
-                    "name": "The Data Mine - Corporate Partners (1/22 - 5/22)", 
-                    "description": "Worked with data scientists at American First Finance to analyze company data. Trained K-Nearest Neighbor and Linear Regression models to provide some insights to region performance and customer lifetime value.", 
-                    "tools": "Python, NumPy, Pandas, Scikit-Learn",
-                    "img": "",
-                    "web_link": "https://datamine.purdue.edu/corporate/americanfirstfinance/tdm_symposium2022_poster_american_first_finance.pdf",
-                    "github_link": ""
-                },
-                {
-                    "name": "HSE Safety (12/20 - 1/21)", 
-                    "description": "Collaborated with school administration to plan and create a system for staff to quickly and securely access critical safety data. Involved creating a navigation system for a PDF, drill info extraction and room searching, and contact searching.", 
+                    "name": "HSE Safety: Web App", 
+                    "date": "12/20 - 1/21",
+                    "description": "For this project, I collaborated with my school's administration to plan and build a system for staff to quickly access safety procedure data. This involved building a table of contents (seen in the image) to a large PDF, a way to search safety routes and procedure by classroom, and search administration roles and contacts.", 
                     "tools": "React, Ant Design, Express.js, Node.js, MongoDB, React-PDF",
                     "img": "assets/hsesafe.PNG",
                     "web_link": "",
                     "github_link": ""
                 },
                 {
-                    "name": "HSE Courses (11/20 - 5/21)", 
-                    "description": "Developed a MERN web application to enhance students course planning, reduce course guide maintenance, and improve course offering and diploma requirement awareness. In its first year of use, it hit over 500 users and received very positive feedback.", 
+                    "name": "HSE Courses: Web App", 
+                    "date": "11/20 - 5/21",
+                    "description": "This is the project that hooked me on software development. My high school used to have students fill out course requests on paper, and advisors would manually review them (often missing details and causing issues for students). So, using the MERN stack, I decided to develop an app to enhance course searching, planning, and diploma requirement matching for students. In its first year of use, it hit over 500 users, and received very positive feedback.", 
                     "tools": "React, Ant Design, Express.js, Node.js, MongoDB",
                     "img": "assets/hsecourse.PNG",
                     "web_link": "https://hsecourses.app/",
-                    "github_link": ""
-                }
-            ]
-        },
-        {
-            "type": "Past School Projects",
-            "projects": [
-                {
-                    "name": "Shell from Scratch (CS 25200: Systems Programming)", 
-                    "description": "Programmed my own shell using C++, Lex, and Yacc. Learned about managing processes, file descriptors, signals, and more.", 
-                    "tools": "C++, Lex, Yacc",
-                    "img": "",
-                    "web_link": "",
-                    "github_link": ""
-                },
-                {
-                    "name": "Malloc from Scratch (CS 25200: Systems Programming)", 
-                    "description": "Recreated C's the memory allocator, the malloc function, from scratch. Learned about memory layout (arenas, free block lists, fence posts), alignment, coalescing, and more.",
-                    "tools": "C",
-                    "img": "",
-                    "web_link": "",
-                    "github_link": ""
-                },
-                {
-                    "name": "Used Car Pricing Study (STAT 35500: Statistics For Data Science)",
-                    "description": "Used statistics methods to analyze a dataset of used cars and their prices. Used linear regression, ANOVA, and more to uncover interesting insights in to the pricing of used cars.", 
-                    "tools": "R",
-                    "img": "",
-                    "web_link": "",
-                    "github_link": ""
-                },
-                {
-                    "name": "Graphics Engine from Scratch (CS 33400: Graphics Programming)",
-                    "description": "A cpu-based graphics engine where I derived the math for and implemented camera modeling, rasterization, model-space interpolation, shading, texture mapping, shadow mapping, environment mapping, and more.", 
-                    "tools": "C++",
-                    "img": "",
-                    "web_link": "",
-                    "github_link": ""
-                },
-                {
-                    "name": "Discussion Board App (CS 18000: Object Oriented Programming)",
-                    "description": "Created client-server application for managing discussion boards using sockets, multithreading, and Java Swing.", 
-                    "tools": "Java",
-                    "img": "",
-                    "web_link": "",
-                    "github_link": ""
-                }
-            ]
-        },
-        {
-            "type": "Future Project Interests/Ideas",
-            "projects": [
-                {
-                    "name": "A Hardware Desription Language", 
-                    "description": "Creating my own hardware description language (like Verilog) from scratch. I think it would be a good project to learn about compilers and about hardware design.",
-                    "tools": "Haskell",
-                    "img": "",
-                    "web_link": "",
-                    "github_link": ""
-                },
-                {
-                    "name": "Quantum Computer VM", 
-                    "description": "Creating a quatum computer virtual machine. I started looking into quantum computing 7/23 and was fascinated by how they work, so simulating one would be pretty cool.", 
-                    "tools": "Rust",
-                    "img": "",
-                    "web_link": "",
-                    "github_link": ""
-                },
-                {
-                    "name": "MediaPipe Web Optimization", 
-                    "description": "Optimizing MediaPipe for the web, likely by quantizing the model weights and using TensorFlow.js. This would be for use in the past project Drawtic Phone.", 
-                    "tools": "TensorFlow.js, Google MediaPipe, Python",
-                    "img": "",
-                    "web_link": "",
                     "github_link": ""
                 }
             ]

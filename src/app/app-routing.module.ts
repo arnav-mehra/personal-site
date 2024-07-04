@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'education', component: EducationComponent },
   { path: 'projects', component: ProjectsComponent },
-  { path: 'work', component: WorkComponent },
+  { path: 'experience', component: WorkComponent },
   { path: '**', redirectTo: 'home' }
 ];
 

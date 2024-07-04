@@ -1,56 +1,80 @@
-<div>
+<div class=container>
     <div class="type" *ngFor="let projectType of projectData">
-        <div class="type-title">{{projectType.type}}</div>
-        <div class="card" *ngFor="let project of projectType.projects">
-            <div class="info">
-                <div class="infohead">
-                    <div class="title">
-                        {{project.name}}
+        <div class="type-title">
+            {{projectType.type}}
+        </div>
+        
+        <div class="card-container">
+            <div
+                class="card"
+                (click)="flipProjectCard(project.name)"
+                *ngFor="let project of projectType.projects"
+            >
+                <div class="card-inner">
+                    <!-- *ngIf="project.name !== hoveredProject" -->
+                    <div class="card-content card-front"
+                    >
+                        <div class="infohead">
+                            <div class="title">
+                                {{project.name}}
+                            </div>
+                        </div>
+    
+                        <div class="img-container">
+                            <img
+                                *ngIf="isImage(project.img)"
+                                class="img"
+                                [src]="project.img"
+                                alt="IMG"
+                            >
+                            <video
+                                *ngIf="isVideo(project.img)"
+                                class="img"
+                                playsinline autoplay muted loop
+                            >
+                                <source [src]="project.img" type="video/mp4">
+                            </video>
+                        </div>
+    
+                        <div *ngIf="project.date?.length" class="date">
+                            {{project.date}}
+                        </div>
                     </div>
-                    <div class="links">
-                        <a
-                            *ngIf="project.github_link != ''" 
-                            [href]="project.github_link" 
-                            target="_blank"
-                        >
-                            <fa-icon [icon]="faGithubAlt"></fa-icon>
-                        </a>
-                        <a
-                            *ngIf="project.web_link != ''" 
-                            [href]="project.web_link" 
-                            target="_blank"
-                        >
-                            <fa-icon [icon]="faLink"></fa-icon>
-                        </a>
+                    <!-- *ngIf="project.name === hoveredProject" -->
+                    <div class="card-content card-back"
+                    >
+                        <div class="links">
+                            Links:
+                            <div *ngIf="project.github_link != ''" >
+                                <a
+                                    [href]="project.github_link" 
+                                    target="_blank"
+                                >
+                                    <fa-icon [icon]="faGithubAlt"></fa-icon>
+                                </a>
+                            </div>
+                            <div *ngIf="project.web_link != ''" >
+                                <a
+                                    [href]="project.web_link" 
+                                    target="_blank"
+                                >
+                                    <fa-icon [icon]="faLink"></fa-icon>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="description">
+                            {{project.description}}
+                        </div>
+                    
+                        <div class="tools" *ngIf="project.tools?.length" >
+                            Tools: {{project.tools}}
+                        </div>
+    
+                        
                     </div>
-                </div>
-                <div class="description">
-                    {{project.description}}
-                </div>
-                
-                <div class="tools" *ngIf="project.tools?.length" >
-                    Tools: {{project.tools}}
                 </div>
             </div>
-
-            <img
-                *ngIf="project.img?.length"
-                class="img"
-                [src]="project.img"
-                alt="IMG"
-            >
-            <!-- <iframe
-                *ngIf="!(project.img?.length) && (project.web_link.length)"
-                class="img"
-                title="Web Link IFrame"
-                [src]="project.web_link | safe"
-            ></iframe>
-            <iframe
-                *ngIf="!(project.img?.length) && !(project.web_link?.length) && (project.github_link?.length)"
-                class="img"
-                title="GitHub Link IFrame"
-                [src]="project.github_link | safe"
-            ></iframe> -->
         </div>
     </div>
 </div>

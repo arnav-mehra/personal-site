@@ -2,18 +2,12 @@
   <navbar></navbar>
 
   <div class="content-container">
-    <div class=content>
-      <router-outlet></router-outlet>
-    </div>
-    <div class="ocean">
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 
   <div class=bg-component>
     <game-of-life-embedded></game-of-life-embedded>
   </div>
+
   <footer [isOutside]="true"></footer>
 </div>

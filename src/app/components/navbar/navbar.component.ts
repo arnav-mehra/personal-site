@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
     { title: 'Home', link: '/home', icon: faHome }, 
     { title: 'Education', link: '/education', icon: faSchool }, 
     { title: 'Projects', link: '/projects', icon: faTasks },
-    { title: 'Work', link: '/work', icon: faBriefcase }
+    { title: 'Experience', link: '/experience', icon: faBriefcase }
   ];
 
   faBars = faBars;

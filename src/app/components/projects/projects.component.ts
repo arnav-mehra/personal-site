@@ -11,10 +11,39 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 export class ProjectsComponent implements OnInit {
 
+  hoveredProject: string = "";
   projectData = data.projectData;
   faGithubAlt = faGithubAlt;
   faLink = faLink;
 
   constructor() {}
   ngOnInit(): void {}
+
+  ngAfterViewInit() {
+    const videos = document.getElementsByTagName('video');
+    Array.prototype.slice.call(videos).forEach(video => {
+      video.muted = true;
+      video.play();
+    });
+  }
+
+  mouseEnter(projectName: string){
+    this.hoveredProject = projectName;
+  }
+
+  mouseLeave(_: string){
+    this.hoveredProject = "";
+  }
+
+  flipProjectCard(projectName: string){
+    this.hoveredProject = this.hoveredProject.length ? "" : projectName;
+  }
+
+  isImage(fname: string): boolean {
+    return !!['PNG', 'JPG'].filter((x: string) => fname?.toUpperCase().includes(x)).length;
+  }
+
+  isVideo(fname: string): boolean {
+    return !!['MP4'].filter((x: string) => fname?.toUpperCase().includes(x)).length;
+  }
 }
