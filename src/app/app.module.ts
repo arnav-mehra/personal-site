@@ -4,9 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent, SafePipe } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MatButtonModule } from '@angular/material/button';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -18,7 +15,8 @@ import { WorkComponent } from './components/work/work.component';
 import { ChessComponent } from './components/react-components/chess-embedded.component';
 import { GameOfLifeComponent } from './components/react-components/game-of-life-embedded.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { DragDropModule } from '@angular/cdk/drag-drop';
+// import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,12 +34,11 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatButtonModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    MatTooltipModule,
-    MatSidenavModule,
-    DragDropModule
+    CommonModule,
+    // DragDropModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

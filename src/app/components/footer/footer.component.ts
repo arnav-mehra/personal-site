@@ -34,21 +34,37 @@ export class FooterComponent implements OnInit {
 
   FileSaver = require('file-saver');
   width: number = window.innerWidth;
+
   isLeft: boolean = true;
+  isGrabbed: boolean = false;
+  grabHeight: number = 48;
 
   constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const boundPointerUp = () => this.pointerUp();
+    const boundPointerMove = (e: any) => this.pointerMove(e);
+
+    window.addEventListener('pointerup', boundPointerUp);
+    window.addEventListener('pointermove', boundPointerMove);
+  }
 
   updateWidth() {
     this.width = window.innerWidth;
   }
-  onDrag(event: any) {
+
+  pointerDown() {
+    this.isGrabbed = true;
+  }
+  pointerUp() {
+    this.isGrabbed = false;
+  }
+  pointerMove(event: any) {
+    if (!this.isGrabbed) return;
+
     var thresold = (this.isLeft? 2/3 : 1/3) * window.innerWidth;
-    if (event.event.x) {
-      this.isLeft = event.event.x < thresold;
-    } else {
-      this.isLeft = event.event.touches[0].clientX < thresold;
-    }
+    const x = event.x || event.touches[0].clientX;
+    this.isLeft = x < thresold;
+    this.grabHeight -= event.movementY;
   }
 
   getAction(itemTitle: string) {

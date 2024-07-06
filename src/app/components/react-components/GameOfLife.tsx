@@ -1,4 +1,3 @@
-import { FlexibleConnectedPositionStrategy } from '@angular/cdk/overlay';
 import React, {useState, useEffect} from 'react';
 
 const dbcolor = "#0D0D0D";

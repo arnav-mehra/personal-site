@@ -23,10 +23,17 @@
     transition: width .5s ease-in-out
 
 .sidenav-wrapper
-    padding: 85px 15px 0 15px
+    width: 140px
+    padding: 96px 16px 32px 16px
+
     display: flex
     flex-direction: column
-    justify-content: space-between
+    gap: 32px
+
+    .sidenav-upper
+        display: flex
+        flex-direction: column
+        gap: 16px
 
 
 .menu-navbar
@@ -42,18 +49,24 @@
         align-items: center
         
         .title
-            font-size: 32px
+            font-size: 24px
 
         .menu-items
             display: flex
             justify-content: space-between
 
-        .menu-navbutton
-            font-size: 16px
-            fa-icon
-                margin-right: 8px
-            &:hover
-                color: #CADCFC
+.menu-navbutton
+    font-size: 16px
+    text-decoration: none
+    padding: 8px 16px
+    border-radius: 8px
+    
+    fa-icon
+        margin-right: 8px
+    &:hover
+        background-color: #fff1
+        color: #CADCFC
+        transition: 0.2s ease-in-out
 
 .openclose
     font-size: 24px

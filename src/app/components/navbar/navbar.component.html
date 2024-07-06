@@ -3,20 +3,28 @@
         <div class="title">
             {{title}}
         </div>
-        <div *ngIf="width > 750; else elseBlock">
+
+        <div *ngIf="width > 800; else elseBlock">
             <nav class="menu-items">
                 <div *ngFor="let item of menuItems">
-                    <a mat-button [routerLink]="item.link" routerLinkActive="active">
-                        <div class="menu-navbutton">
-                            <fa-icon [icon]="item.icon"></fa-icon>
-                            {{item.title}}
-                        </div>
+                    <a
+                        class="menu-navbutton"
+                        [routerLink]="item.link"
+                        routerLinkActive="active"
+                    >
+                        <fa-icon [icon]="item.icon"></fa-icon>
+                        {{item.title}}
                     </a>
                 </div>
             </nav>
         </div>
         <ng-template #elseBlock>
-            <fa-icon (click)="toggleDrawer()" [icon]="drawer? faTimes : faBars" class="openclose"></fa-icon>
+            <fa-icon
+                (click)="toggleDrawer()"
+                [icon]="drawer? faTimes : faBars"
+                class="openclose"
+            ></fa-icon>
+
             <div
                 [ngClass]="{
                     'sidenav-active': drawer,
@@ -26,17 +34,19 @@
                 <div class="sidenav-wrapper">
                     <div class="sidenav-upper">
                         <div *ngFor="let item of menuItems">
-                            <a mat-button (click)="toggleDrawer()" [routerLink]="item.link" routerLinkActive="active">
-                                <div class="menu-navbutton">
-                                    <fa-icon [icon]="item.icon"></fa-icon>
-                                    {{item.title}}
-                                </div>
+                            <a
+                                class="menu-navbutton"
+                                (click)="toggleDrawer()"
+                                [routerLink]="item.link"
+                                routerLinkActive="active"
+                            >
+                                <fa-icon [icon]="item.icon"></fa-icon>
+                                {{item.title}}
                             </a>
                         </div>
                     </div>
 
                     <footer [isOutside]="false"></footer>
-
                 </div>
             </div>
         </ng-template>

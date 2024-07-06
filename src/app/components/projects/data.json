@@ -1,7 +1,7 @@
 {
     "projectData": [
         {
-            "type": "Ongoing Personal Projects",
+            "type": "Ongoing Projects",
             "projects": [
                 {
                     "name": "Unifier",
@@ -51,7 +51,7 @@
             ]
         },
         {
-            "type": "Past Personal Projects",
+            "type": "Past Projects",
             "projects": [
                 {
                     "name": "L-System Visualizer", 

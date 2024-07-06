@@ -1,31 +1,30 @@
 <div (window:resize)="updateWidth()">
     <div
         class="drag-boundary" 
-        *ngIf="width > 750 && isOutside"
+        *ngIf="width > 800 && isOutside"
         [style.left]="isLeft? 0 : 'auto'"
         [style.right]="isLeft? 'auto' : 0"
+        [style.bottom]="grabHeight + 'px'"
     >
         <div
             class=outside-foot
-            cdkDragLockAxis="y"
-            cdkDrag 
-            (cdkDragMoved)="onDrag($event)"
             [style.borderRadius]="isLeft? '0 10px 10px 0' : '10px 0 0 10px'"
         >
             <div class=icon-container>
-                <div cdkDragHandle class="handle">
+                <div class="handle" (pointerdown)="pointerDown()">
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>
+
                 <a
                     *ngFor="let item of footerItems"
-                    [matTooltip]="item.title"
-                    matTooltipPosition="left"
                     (click)="getAction(item.title)"
+                    class="nav-button"
                 >
                     <fa-icon [icon]="item.icon"></fa-icon>
                 </a>
-                <div cdkDragHandle class="handle">
+
+                <div class="handle" (pointerdown)="pointerDown()">
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>
@@ -35,11 +34,12 @@
 
     <nav *ngIf="!isOutside" class="menu-items">
         <div *ngFor="let item of footerItems">
-            <a mat-button (click)="getAction(item.title)">
-                <div class="menu-navbutton">
-                    <fa-icon [icon]="item.icon"></fa-icon>
-                    {{item.title}}
-                </div>
+            <a
+                class="menu-navbutton"
+                (click)="getAction(item.title)"
+            >
+                <fa-icon [icon]="item.icon"></fa-icon>
+                {{item.title}}
             </a>
         </div>
     </nav>
