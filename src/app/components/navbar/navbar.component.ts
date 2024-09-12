@@ -25,7 +25,17 @@ export class NavbarComponent implements OnInit {
   drawer: boolean = false;
 
   constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    window.addEventListener('scroll', (event: any) => {
+      this.handleScroll(event)
+    });
+  }
+
+  handleScroll(event: any) {
+    if (window.scrollY > 50) {
+      this.drawer = false;
+    }
+  }
   
   updateWidth() {
     this.width = window.innerWidth;
