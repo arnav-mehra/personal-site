@@ -11,7 +11,7 @@
             [style.borderRadius]="isLeft? '0 10px 10px 0' : '10px 0 0 10px'"
         >
             <div class=icon-container>
-                <div class="handle" (pointerdown)="pointerDown()">
+                <div class="handle" (pointerdown)="pointerDown($event)">
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>
@@ -24,7 +24,7 @@
                     <fa-icon [icon]="item.icon"></fa-icon>
                 </a>
 
-                <div class="handle" (pointerdown)="pointerDown()">
+                <div class="handle" (pointerdown)="pointerDown($event)">
                     <div class="bar"></div>
                     <div class="bar"></div>
                 </div>

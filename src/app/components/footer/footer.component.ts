@@ -52,7 +52,8 @@ export class FooterComponent implements OnInit {
     this.width = window.innerWidth;
   }
 
-  pointerDown() {
+  pointerDown(event: Event) {
+    event.preventDefault();
     this.isGrabbed = true;
   }
   pointerUp() {
