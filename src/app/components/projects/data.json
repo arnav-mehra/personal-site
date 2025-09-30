@@ -4,6 +4,15 @@
             "type": "Ongoing Projects",
             "projects": [
                 {
+                    "name": "Cake-Cutting Research Paper",
+                    "date": "Since 12/25",
+                    "description": "My algorithmic economics professor pitched me a problem, I solved it and we wrote a paper that got accepted to NeurIPS 2025. The paper introduced and analyzed a new class of fairness notions to a field of cake-cutting that aim to bridge the immense gaps in complexity of cake-cutting problems and algorithms.", 
+                    "tools": "",
+                    "img": "\nCitation:\n\nOn Hierarchies of Fairness Notions in Cake Cutting: From Proportionality to Super Envy-Freeness.\n\tArnav Mehra, Alexandros Psomas.\n\tIn the 39th Conference on Neural Information Processing Systems, NeurIPS 2025.",
+                    "web_link": "https://arxiv.org/abs/2506.12950",
+                    "github_link": ""
+                },
+                {
                     "name": "Unifier",
                     "date": "Since 4/24",
                     "description": "To challenge myself, I implemented unification (how prolog works) without references (purely my own design). Currently, it is capable of solving for some more basic compositions of relations, but through various optimizations, I hope to make it usable for type inference in A-Script.", 
@@ -35,7 +44,7 @@
                     "date": "Since 1/22",
                     "description": "I hope you liked the thumbnail. This is the site you are using right now. Mistakenly written in Angular, this site also uses some React components I had made prior including the background (Conway's Game of Life) which is kinda cool. I plan to rewrite this site in A-Stack once it is finished.", 
                     "tools": "Angular, React, SASS",
-                    "img": "assets/this-site.png",
+                    "img": "\nRecursionError: maximum recursion depth exceeded.",
                     "web_link": "https://arnavmehra.com/",
                     "github_link": "https://github.com/arnav-mehra/personal-site"
                 },
@@ -53,6 +62,15 @@
         {
             "type": "Past Projects",
             "projects": [
+                {
+                    "name": "Cake-Cutting Visualizer",
+                    "date": "12/24 - 1/25",
+                    "description": "A visualizer for Cake-Cutting Algorithms that shows step-by-step execution. Made as a possible learning tool for algorithms that are usually only given as pseudo-code.", 
+                    "tools": "JavaScript, HTML, Tailwind CSS",
+                    "img": "assets/cake-cutting-viz.png",
+                    "web_link": "https://cake-cutting-sim.netlify.app/",
+                    "github_link": "https://github.com/arnav-mehra/cake-cutting-sim"
+                },
                 {
                     "name": "L-System Visualizer", 
                     "date": "5/24 - 6/24",
@@ -97,15 +115,6 @@
                     "img": "assets/townie.PNG",
                     "web_link": "https://townie-game.vercel.app/",
                     "github_link": ""
-                },
-                {
-                    "name": "GitHook Fun", 
-                    "date": "8/23 - 8/23",
-                    "description": "A fun mini-project where I made a githook that records user location data on commits. (Note: this is meant for voluntarily use during Purdue Hackers Hack Nights and not to be malicious in any way).", 
-                    "tools": "Bash, Node.js, MySQL",
-                    "img": "",
-                    "web_link": "",
-                    "github_link": "https://github.com/arnav-mehra/git-hook-fun"
                 },
                 {
                     "name": "RN-Graph: Graph Visualizer", 

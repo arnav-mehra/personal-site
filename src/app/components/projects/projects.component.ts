@@ -46,4 +46,8 @@ export class ProjectsComponent implements OnInit {
   isVideo(fname: string): boolean {
     return !!['MP4'].filter((x: string) => fname?.toUpperCase().includes(x)).length;
   }
+
+  isOther(fname: string): boolean {
+    return !this.isImage(fname) && !this.isVideo(fname);
+  }
 }

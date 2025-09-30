@@ -34,6 +34,11 @@
                             >
                                 <source [src]="project.img" type="video/mp4">
                             </video>
+                            <pre
+                                *ngIf="isOther(project.img)"
+                            >
+                                {{project.img}}
+                            </pre>
                         </div>
     
                         <div *ngIf="project.date?.length" class="date">

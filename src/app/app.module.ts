@@ -11,9 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { EducationComponent } from './components/education/education.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { WorkComponent } from './components/work/work.component';
+import { BackgroundComponent } from './components/background/background.component';
 
-import { ChessComponent } from './components/react-components/chess-embedded.component';
-import { GameOfLifeComponent } from './components/react-components/game-of-life-embedded.component';
 import { FooterComponent } from './components/footer/footer.component';
 // import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
@@ -25,11 +24,10 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     EducationComponent,
     ProjectsComponent,
-    ChessComponent,
-    GameOfLifeComponent,
     FooterComponent,
     WorkComponent,
-    SafePipe
+    SafePipe,
+    BackgroundComponent
   ],
   imports: [
     BrowserModule,

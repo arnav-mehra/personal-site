@@ -7,7 +7,7 @@ $univ-font: Verdana
 @font-face
     font-family: $univ-font
     src: local("Berlin"), url(./assets/fonts/Roboto.ttf) format("truetype")
-div, a, button, app-root
+pre, div, a, button, app-root
     font-family: $univ-font
     color: white
 
@@ -39,3 +39,33 @@ app-root
     display: flex
     justify-content: center
     align-items: center
+
+pre
+    white-space: pre-wrap
+    white-space: -moz-pre-wrap
+    white-space: -pre-wrap
+    white-space: -o-pre-wrap
+    word-wrap: break-word
+    font-size: 14px
+
+#bg
+    overflow: hidden
+    position: fixed
+    width: 100vw
+    height: 100vh
+    z-index: -1
+
+    .row-wrapper
+        display: flex
+        justify-content: space-between
+        width: 100vw
+        height: 40px
+
+        .col-wrapper
+            color: #202020
+            width: 40px
+            height: 40px
+            line-height: 40px
+            transition-duration: 1s
+            display: flex
+            justify-content: center
