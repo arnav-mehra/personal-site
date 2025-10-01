@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { faBriefcase, faHome, faSchool, faTasks } from '@fortawesome/free-solid-svg-icons';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FooterComponent } from '../footer/footer.component';
+import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.sass']
+  templateUrl: 'navbar.component.html',
+  styleUrls: ['navbar.component.sass'],
+  imports: [FooterComponent, CommonModule, FontAwesomeModule, RouterModule],
+  standalone: true
 })
-
 export class NavbarComponent implements OnInit {
 
   title: string = 'Arnav Mehra';

@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-background',
   templateUrl: './background.component.html',
-  styleUrls: ['./background.component.sass']
+  styleUrls: ['./background.component.sass'],
+  standalone: true
 })
 export class BackgroundComponent implements OnInit {
   constructor() {}

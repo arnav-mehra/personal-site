@@ -42,7 +42,7 @@
                 {
                     "name": "This Site", 
                     "date": "Since 1/22",
-                    "description": "I hope you liked the thumbnail. This is the site you are using right now. Mistakenly written in Angular, this site also uses some React components I had made prior including the background (Conway's Game of Life) which is kinda cool. I plan to rewrite this site in A-Stack once it is finished.", 
+                    "description": "I hope you understood the joke! This is the site you are using right now. The background is Conway's Game of Life if you haven't noticed! Mistakenly written in Angular long ago, so I plan to rewrite this site in A-Stack once it is finished.", 
                     "tools": "Angular, React, SASS",
                     "img": "\nRecursionError: maximum recursion depth exceeded.",
                     "web_link": "https://arnavmehra.com/",

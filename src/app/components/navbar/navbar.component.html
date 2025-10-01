@@ -4,21 +4,24 @@
             {{title}}
         </div>
 
-        <div *ngIf="width > 800; else elseBlock">
-            <nav class="menu-items">
-                <div *ngFor="let item of menuItems">
-                    <a
-                        class="menu-navbutton"
-                        [routerLink]="item.link"
-                        routerLinkActive="active"
-                    >
-                        <fa-icon [icon]="item.icon"></fa-icon>
-                        {{item.title}}
-                    </a>
-                </div>
-            </nav>
-        </div>
-        <ng-template #elseBlock>
+        @if (width > 800) {
+            <div>
+                <nav class="menu-items">
+                    @for (item of menuItems; track item) {
+                        <div>
+                            <a
+                                class="menu-navbutton"
+                                [routerLink]="item.link"
+                                routerLinkActive="active"
+                            >
+                                <fa-icon [icon]="item.icon"></fa-icon>
+                                {{item.title}}
+                            </a>
+                        </div>
+                    }
+                </nav>
+            </div>
+        } @else {
             <fa-icon
                 (click)="toggleDrawer()"
                 [icon]="drawer? faTimes : faBars"
@@ -33,25 +36,25 @@
             >
                 <div class="sidenav-wrapper">
                     <div class="sidenav-upper">
-                        <div *ngFor="let item of menuItems">
-                            <a
-                                class="menu-navbutton"
-                                (click)="toggleDrawer()"
-                                [routerLink]="item.link"
-                                routerLinkActive="active"
-                            >
-                                <fa-icon [icon]="item.icon"></fa-icon>
-                                {{item.title}}
-                            </a>
-                        </div>
+                        @for (item of menuItems; track item) {
+                            <div>
+                                <a
+                                    class="menu-navbutton"
+                                    (click)="toggleDrawer()"
+                                    [routerLink]="item.link"
+                                    routerLinkActive="active"
+                                >
+                                    <fa-icon [icon]="item.icon"></fa-icon>
+                                    {{item.title}}
+                                </a>
+                            </div>
+                        }
                     </div>
 
                     <footer [isOutside]="false"></footer>
                 </div>
             </div>
-        </ng-template>
-        
-        
+        }
     </div>
     <!-- <div class=fade></div> -->
 </div>

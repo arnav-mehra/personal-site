@@ -1,3 +1,5 @@
+@use "../../../variables";
+    
 .container
     display: flex
     flex-direction: column
@@ -33,7 +35,7 @@
             height: 296px
             padding: 16px
             border-radius: 8px
-            background: #fff1
+            background: variables.$glass-color
 
             .card-content
                 position: absolute
@@ -61,7 +63,6 @@
                     display: flex
                     align-items: center
                     justify-content: center
-                    // background: black
                     .img
                         max-height: 240px
                         max-width: 240px
@@ -77,7 +78,7 @@
                 
                 .tools
                     font-size: 16px
-                    color: #CADCFC
+                    color: variables.$accent-color
                 
                 .date
                     font-size: 12px

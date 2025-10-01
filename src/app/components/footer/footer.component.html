@@ -1,46 +1,79 @@
 <div (window:resize)="updateWidth()">
-    <div
-        class="drag-boundary" 
-        *ngIf="width > 800 && isOutside"
-        [style.left]="isLeft? 0 : 'auto'"
-        [style.right]="isLeft? 'auto' : 0"
-        [style.bottom]="grabHeight + 'px'"
-    >
+    @if (width > 800 && isOutside()) {
         <div
-            class=outside-foot
-            [style.borderRadius]="isLeft? '0 10px 10px 0' : '10px 0 0 10px'"
+            class="drag-boundary"
+            [style.left]="isLeft? 0 : 'auto'"
+            [style.right]="isLeft? 'auto' : 0"
+            [style.bottom]="grabHeight + 'px'"
         >
-            <div class=icon-container>
-                <div class="handle" (pointerdown)="pointerDown($event)">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
+            <div
+                class=outside-foot
+                [style.borderRadius]="isLeft? '0 10px 10px 0' : '10px 0 0 10px'"
+            >
+                <div class=icon-container>
+                    <div class="handle" (pointerdown)="pointerDown($event)">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
 
-                <a
-                    *ngFor="let item of footerItems"
-                    (click)="getAction(item.title)"
-                    class="nav-button"
-                >
-                    <fa-icon [icon]="item.icon"></fa-icon>
-                </a>
+                    <a
+                        href="https://github.com/arnav-mehra"
+                        target="_blank"
+                        class="nav-button"
+                    >
+                        <fa-icon [icon]="faGithub"></fa-icon>
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/arnav-mehra-ab8975193"
+                        target="_blank"
+                        class="nav-button"
+                    >
+                        <fa-icon [icon]="faLinkedinIn"></fa-icon>
+                    </a>
+                    <a
+                        href="../../../assets/resume.pdf"
+                        download="arnav-mehra-resume.pdf"
+                        class="nav-button"
+                    >
+                        <fa-icon [icon]="faFile"></fa-icon>
+                    </a>
 
-                <div class="handle" (pointerdown)="pointerDown($event)">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
+                    <div class="handle" (pointerdown)="pointerDown($event)">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <nav *ngIf="!isOutside" class="menu-items">
-        <div *ngFor="let item of footerItems">
-            <a
-                class="menu-navbutton"
-                (click)="getAction(item.title)"
-            >
-                <fa-icon [icon]="item.icon"></fa-icon>
-                {{item.title}}
-            </a>
-        </div>
-    </nav>
+    } @else if (!isOutside()) {
+        <nav class="menu-items">
+            <div>
+                <a
+                    href="https://github.com/arnav-mehra"
+                    target="_blank"
+                    class="nav-button"
+                >
+                    <fa-icon [icon]="faGithub"></fa-icon>
+                </a>
+            </div>
+            <div>
+                <a
+                    href="https://www.linkedin.com/in/arnav-mehra-ab8975193"
+                    target="_blank"
+                    class="nav-button"
+                >
+                    <fa-icon [icon]="faLinkedinIn"></fa-icon>
+                </a>
+            </div>
+            <div>
+                <a
+                    href="../../../assets/resume.pdf"
+                    download="arnav-mehra-resume.pdf"
+                    class="nav-button"
+                >
+                    <fa-icon [icon]="faFile"></fa-icon>
+                </a>
+            </div>
+        </nav>
+    }
 </div>

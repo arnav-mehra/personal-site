@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import data from './data.json';
 import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.sass']
+  styleUrls: ['./projects.component.sass'],
+  standalone: true,
+  imports: [CommonModule, FontAwesomeModule]
 })
-
 export class ProjectsComponent implements OnInit {
 
   hoveredProject: string = "";
@@ -45,9 +48,5 @@ export class ProjectsComponent implements OnInit {
 
   isVideo(fname: string): boolean {
     return !!['MP4'].filter((x: string) => fname?.toUpperCase().includes(x)).length;
-  }
-
-  isOther(fname: string): boolean {
-    return !this.isImage(fname) && !this.isVideo(fname);
   }
 }

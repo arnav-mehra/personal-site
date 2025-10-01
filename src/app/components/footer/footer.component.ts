@@ -1,38 +1,23 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, input } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
-
-declare var require: any
+import { faDownload, faFile } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.sass']
+  styleUrls: ['./footer.component.sass'],
+  standalone: true,
+  imports: [FontAwesomeModule]
 })
-
 export class FooterComponent implements OnInit {
 
-  @Input() isOutside: boolean = true;
+  isOutside = input<boolean>(true);
 
-  footerItems = [
-    {
-      title: "Github", 
-      link: "https://github.com/arnav-mehra",
-      icon: faGithub
-    },
-    {
-      title: "LinkedIn", 
-      link: "https://www.linkedin.com/in/arnav-mehra-ab8975193", 
-      icon: faLinkedinIn
-    },
-    {
-      title: "Resume", 
-      link: "javascript:void(0)", 
-      icon: faDownload
-    }
-  ];
+  faGithub = faGithub;
+  faLinkedinIn = faLinkedinIn;
+  faFile = faFile;
 
-  FileSaver = require('file-saver');
   width: number = window.innerWidth;
 
   isLeft: boolean = true;
@@ -65,20 +50,10 @@ export class FooterComponent implements OnInit {
     var thresold = (this.isLeft? 2/3 : 1/3) * window.innerWidth;
     const x = event.x || event.touches[0].clientX;
     this.isLeft = x < thresold;
-    this.grabHeight -= event.movementY;
+    this.grabHeight = this.clampGrabHeight(this.grabHeight - event.movementY);
   }
 
-  getAction(itemTitle: string) {
-    var item = this.footerItems.find(i => i.title == itemTitle);
-    switch (itemTitle) {
-      case 'Resume':
-        console.log("yay")
-        const pdfUrl = './assets/resume.pdf';
-        const pdfName = 'amehra-resume';
-        this.FileSaver.saveAs(pdfUrl, pdfName);
-        break;
-      default:
-        window.open(item?.link, '_blank');
-    }
+  clampGrabHeight(x: number) {
+    return Math.min(Math.max(x, 0), window.innerHeight - 176);
   }
 }

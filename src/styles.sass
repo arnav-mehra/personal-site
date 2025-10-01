@@ -1,19 +1,15 @@
-$base-green: #8AB6F9
-$base-purple: #CADCFC
-$base: rgb(30, 30, 30)
-$base-gray: rgb(40, 40, 40)
-$univ-font: Verdana
+@use "variables";
 
 @font-face
-    font-family: $univ-font
+    font-family: variables.$univ-font
     src: local("Berlin"), url(./assets/fonts/Roboto.ttf) format("truetype")
 pre, div, a, button, app-root
-    font-family: $univ-font
+    font-family: variables.$univ-font
     color: white
 
 body
     margin: 0
-    background-color: #141414
+    background-color: variables.$bg-color
 
 *::-webkit-scrollbar
     width: 8px
@@ -26,11 +22,11 @@ app-root
     width: 100%
 
 ::selection
-    background: $base-green
-    color: $base
+    background: variables.$accent-color
+    color: variables.$bg-color
 ::-moz-selection
-    background: $base-green
-    color: $base
+    background: variables.$accent-color
+    color: variables.$bg-color
 
 #golId
     width: 100vw
@@ -67,5 +63,6 @@ pre
             height: 40px
             line-height: 40px
             transition-duration: 1s
+            transition-property: transform
             display: flex
             justify-content: center
